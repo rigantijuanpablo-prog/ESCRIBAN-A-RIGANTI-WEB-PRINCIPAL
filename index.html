@@ -70,42 +70,41 @@ setLang(localStorage.getItem('riganti_lang')||'es');
 </script>
 
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDORKK4W6z9QZn3eg85cdH4-2T415vvyT0",
-    authDomain: "escribania-riganti.firebaseapp.com",
-    projectId: "escribania-riganti",
-    storageBucket: "escribania-riganti.firebasestorage.app",
-    messagingSenderId: "725421481175",
-    appId: "1:725421481175:web:4f88461975d9f26eb06492"
+const firebaseConfig = {
+  apiKey: "AIzaSyDORKK4W6z9QZn3eg85cdH4-2T415vvyT0",
+  authDomain: "escribania-riganti.firebaseapp.com",
+  projectId: "escribania-riganti",
+  storageBucket: "escribania-riganti.firebasestorage.app",
+  messagingSenderId: "725421481175",
+  appId: "1:725421481175:web:4f88461975d9f26eb06492"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const form = document.querySelector('form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const inputs = form.querySelectorAll('input, textarea');
+  const data = {
+    nombre: inputs[0]?.value || '',
+    email: inputs[1]?.value || '',
+    telefono: inputs[2]?.value || '',
+    mensaje: inputs[3]?.value || document.querySelector('textarea')?.value || '',
+    fecha: serverTimestamp()
   };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // Formulario -> guarda en Firebase
-  const form = document.getElementById('formContacto');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = document.getElementById('btnEnviar');
-    btn.textContent = 'ENVIANDO...';
-    try {
-      await addDoc(collection(db, "consultas"), {
-        nombre: form.nombre.value,
-        email: form.email.value,
-        telefono: form.telefono.value,
-        mensaje: form.mensaje.value,
-        fecha: serverTimestamp()
-      });
-      document.getElementById('msgOk').style.display = 'block';
-      form.reset();
-    } catch(err) {
-      alert('Error: ' + err.message);
-    }
-    btn.textContent = 'ENVIAR CONSULTA →';
-  });
+  try {
+    await addDoc(collection(db, "consultas"), data);
+    form.reset();
+    alert('Consulta enviada correctamente ✓');
+  } catch (err) {
+    console.error(err);
+    alert('Error al enviar: ' + err.message);
+  }
+});
 </script>
 
 </body>
