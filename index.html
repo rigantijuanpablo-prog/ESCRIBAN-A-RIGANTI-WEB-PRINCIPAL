@@ -71,5 +71,33 @@ h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300}.eyebrow{font-size:
 <section id="contacto" class="seccion-contacto"><div class="contacto-grid"><div><h2 style="font-size:46px;line-height:.95">Agende su<br><i style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-d)">turno privado</i></h2><p style="margin-top:16px;opacity:.6;line-height:1.9">Maipú 497, 4° Piso<br>C1023AAR · CABA<br>+54 11 4800-1234<br>info@riganti.com.ar</p></div><form class="form-contacto"><input type="text" name="nombre" placeholder="Nombre y apellido *" required><input type="email" name="email" placeholder="Email *" required><input type="tel" name="telefono" placeholder="Teléfono *" required><textarea name="mensaje" placeholder="Consulta *" required></textarea><button type="submit" class="btn-enviar">ENVIAR CONSULTA →</button></form></div></section>
 <footer class="footer-premium"><div class="footer-grid"><div><img src="logo-completo-pluma-transparente.png" alt="RIGANTI" class="logo-footer-img"></div><div><span>SERVICIOS</span><p style="margin-top:16px;font-size:13px;opacity:.6">Compraventa<br>Sociedades<br>Sucesiones</p></div><div><span>MICROCENTRO</span><p style="margin-top:16px;font-size:13px;opacity:.6">Maipú 497, 4° Piso<br>CABA</p></div><div><span>TURNOS</span><p style="margin-top:16px;font-size:13px;opacity:.6">Atención personalizada</p></div></div><div class="footer-bottom"><span>© 2026 RIGANTI ESCRIBANÍA</span><span>COLEGIO DE ESCRIBANOS CABA</span></div></footer>
 <script>function setLang(l){localStorage.setItem('riganti_lang',l);document.getElementById('btn-es').className=l==='es'?'active':'inactive';document.getElementById('btn-en').className=l==='en'?'active':'inactive'}setLang(localStorage.getItem('riganti_lang')||'es');</script>
-</body>
+.section-estudio blockquote{margin:56px 0 0 0;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;opacity:.8;max-width:520px}
+.seccion-cierre{position:relative;height:82vh;min-height:640px;overflow:hidden;background:var(--dark);display:flex;align-items:center;justify-content:center}.imagen-hall-wrap{position:absolute;inset:0}.imagen-hall{width:100%;height:100%;object-fit:cover;object-position:center 38%}.overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,26,43,.65),rgba(14,26,43,.35) 50%,rgba(14,26,43,.65))}.contenido-cierre{position:relative;z-index:3;text-align:center;color:#fff;max-width:620px}.contenido-cierre h2{font-size:56px}
+.seccion-contacto{padding:120px 48px;background:#fff;border-top:1px solid var(--border)}.contacto-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px}.form-contacto{display:flex;flex-direction:column;gap:28px}.form-contacto input,.form-contacto textarea{border:0;border-bottom:1px solid rgba(14,26,43,.12);padding:20px 0 16px 0;font-size:14px;background:transparent;outline:none}.form-contacto textarea{min-height:140px}.honeypot{display:none!important}.btn-enviar{background:var(--dark);color:#fff;height:56px;padding:0 32px;border:0;letter-spacing:2.5px;font-size:11px;cursor:pointer}
+.footer-premium{background:var(--dark);color:#F9F6F1;padding:96px 48px 32px}.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:80px}.logo-footer-img{width:130px;height:auto;display:block;margin-bottom:20px}.footer-bottom{max-width:1280px;margin:80px auto 0;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;font-size:11px;color:rgba(255,255,255,.25);display:flex;justify-content:space-between}
+@media(max-width:900px){.grid-servicios{grid-template-columns:1fr 1fr}.estudio-main{grid-template-columns:1fr}.contacto-grid{grid-template-columns:1fr}.hero h1{font-size:48px}}
+</style>
+</head>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyDORKK4W6z9QZn3eg85cdH4-2T415vvyT0",
+    authDomain: "escribania-riganti.firebaseapp.com",
+    projectId: "escribania-riganti",
+    storageBucket: "escribania-riganti.firebasestorage.app",
+    messagingSenderId: "725421481175",
+    appId: "1:725421481175:web:4f88461975d9f26eb06492"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
+
+<body>
+
 </html>
