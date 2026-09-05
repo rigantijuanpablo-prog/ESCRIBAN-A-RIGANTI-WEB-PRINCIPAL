@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clientes | RIGANTI</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF9F6;--text:#0E1A2B;--gold:#8C7342;--line:rgba(14,26,43,.12)}
+*{margin:0;padding:0;box-sizing:border-box} body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex}
+.side{flex:0 0 28%;height:100vh;position:sticky;top:0}.side img{width:100%;height:100%;object-fit:cover}
+.main{flex:1;padding:30px 40px}
+h1{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300} h1 i{font-style:italic;color:var(--gold)}
+.box{background:#fff;border:1px solid var(--line);padding:20px;margin-top:20px}
+input{width:100%;border:0;border-bottom:1px solid var(--line);padding:10px 0;margin-top:10px;outline:none}
+.btn{background:var(--text);color:#fff;border:0;padding:11px 16px;font-size:10px;letter-spacing:2px;cursor:pointer;margin-top:12px}
+.card{border:1px solid var(--line);padding:14px;margin-top:10px;background:#fff;display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+<div class="side"><img src="hall-portal-riganti-final2.jpg"></div>
+<div class="main">
+<div style="display:flex;justify-content:space-between"><h1>Clientes <i>Visual</i></h1><a href="admin.html" style="font-size:10px;border:1px solid var(--line);padding:8px 12px;text-decoration:none;color:var(--text)">← VOLVER ADMIN</a></div>
+<p style="font-size:11px;opacity:.5;margin-top:6px">No tocas código. Cargás DNI, nombre y trámites acá.</p>
+
+<div class="box">
+<div style="font-size:10px;letter-spacing:2px">NUEVO CLIENTE</div>
+<input id="dni" placeholder="DNI ej: 28079791">
+<input id="nombre" placeholder="Nombre ej: Juan Pablo Riganti">
+<button class="btn" onclick="crearCliente()">CREAR CLIENTE</button>
+</div>
+
+<div class="box" id="boxTramite" style="display:none">
+<div style="font-size:10px;letter-spacing:2px">AGREGAR TRÁMITE A <span id="clienteSel"></span></div>
+<input id="tipo" placeholder="Tipo ej: Family Office">
+<input id="estado" placeholder="Estado ej: En estudio de títulos">
+<input id="notas" placeholder="Notas ej: Falta reglamento Maipú 497">
+<button class="btn" onclick="addTramite()">AGREGAR TRÁMITE</button>
+</div>
+
+<div id="lista"></div>
+<button class="btn" onclick="descargar()" style="background:var(--gold);margin-top:20px">DESCARGAR clientes.json LISTO PARA GITHUB</button>
+</div>
+
+<script>
+let db = JSON.parse(localStorage.getItem('riganti_db_visual')||'[]');
+let clienteActual = null;
+fetch('clientes.json?v='+Date.now()).then(r=>r.json()).then(j=>{
+ if(db.length==0 && j.length>0){
+   // convertir formato viejo a nuevo si viene
+   if(j[0].tramites) db=j;
+   else {
+     let map={};
+     j.forEach(o=>{ if(!map[o.dni]) map[o.dni]={dni:o.dni,nombre:o.nombre,tramites:[]}; map[o.dni].tramites.push({tipo:o.tramite||o.tipo,estado:o.estado,notas:o.notas,fecha:o.fecha}); });
+     db=Object.values(map);
+   }
+   render();
+ }
+});
+
+function crearCliente(){
+ let d=dni.value.trim(), n=nombre.value.trim(); if(!d||!n) return alert('Falta DNI y nombre');
+ if(db.find(c=>c.dni==d)) { clienteActual=db.find(c=>c.dni==d); } else { db.push({dni:d,nombre:n,tramites:[]}); clienteActual=db[db.length-1]; }
+ localStorage.setItem('riganti_db_visual',JSON.stringify(db));
+ clienteSel.innerText=n+' ('+d+')'; boxTramite.style.display='block'; render();
+ dni.value=''; nombre.value='';
+}
+function addTramite(){
+ if(!clienteActual) return;
+ clienteActual.tramites.push({tipo:tipo.value,estado:estado.value,notas:notas.value,fecha:new Date().toLocaleDateString()});
+ localStorage.setItem('riganti_db_visual',JSON.stringify(db));
+ tipo.value=''; estado.value=''; notas.value=''; render();
+}
+function render(){
+ lista.innerHTML=db.map((c,i)=>`
+   <div class=card><div><b>${c.nombre}</b> - ${c.dni} <div style="margin-top:8px">${c.tramites.map(t=>`<div style="font-size:11px;border-left:2px solid var(--gold);padding-left:8px;margin-top:6px"><b>${t.tipo}</b> - ${t.estado}<br><span style="opacity:.6">${t.notas}</span></div>`).join('')}</div></div>
+   <div><button onclick="sel(${i})" style="font-size:10px">SELECCIONAR</button></div></div>
+ `).join('');
+}
+function sel(i){ clienteActual=db[i]; clienteSel.innerText=clienteActual.nombre+' ('+clienteActual.dni+')'; boxTramite.style.display='block'; }
+function descargar(){
+ let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}); let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='clientes.json'; a.click();
+ alert('Ahora subí ese archivo a GitHub reemplazando el clientes.json viejo');
+}
+render();
+</script>
+</body>
+</html>
