@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Family Office Notarial CABA | Protocolo Familiar y Protección Patrimonial | RIGANTI</title>
-<meta name="description" content="Family Office Notarial en CABA. Unificamos inmuebles, sociedades y fideicomisos. Protocolo familiar, planificación sucesoria y legajo único. 90 años RIGANTI.">
+<title>Family Office Notarial CABA | RIGANTI</title>
+<meta name="description" content="Family Office Notarial en CABA. Protocolo familiar y protección patrimonial. 90 años RIGANTI.">
 <link rel="icon" type="image/png" href="../favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{--bg:#F9F6F1;--dark:#0E1A2B;--gold:#C9B896;--gold-d:#8C7342;--muted:rgba(14,26,43,.6);--border:#E8E2D9}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
 h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .header-principal{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 32px;background:rgba(249,246,241,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,26,43,.08)}
 .logo img{height:72px;width:auto;display:block}.nav-principal{display:flex;gap:26px;align-items:center}
 .nav-principal a{text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark);opacity:.7}
+.nav-principal a.portal-link{color:var(--dark)!important;opacity:.8;display:inline-flex;align-items:center;gap:6px;font-weight:500}
 .btn-header{border:1px solid rgba(14,26,43,.22);padding:12px 22px}
 .page-hero{padding:168px 48px 80px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 380px;gap:80px;align-items:start}
 .page-hero h1{font-size:64px;line-height:.9}.page-hero h1 i{font-style:italic;color:var(--gold-d)}
@@ -24,7 +26,6 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .list-check li{padding:16px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;font-size:14px;position:relative;overflow:hidden;transition:.3s}
 .list-check li::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.45s}
 .list-check li:hover::before{transform:scaleX(1)}
-.list-check li:hover{background:rgba(255,255,255,.6)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
 .step{background:#fff;padding:24px 20px;position:relative;overflow:hidden}
 .step::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.45s}
@@ -32,10 +33,11 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .step h4{font-size:10px;letter-spacing:2px;margin-bottom:8px}
 .step p{font-size:12px;opacity:.7;line-height:1.5}
 .sidebar{position:sticky;top:120px;background:#fff;border:1px solid var(--border);padding:32px}
-.sidebar h4{font-size:11px;letter-spacing:2px;margin-bottom:16px}
 .btn-dark{display:block;background:var(--dark);color:#fff;text-align:center;padding:18px;text-decoration:none;font-size:11px;letter-spacing:2.5px;margin-top:20px;transition:.3s}
-.btn-dark:hover{background:#1c2e4a;transform:translateY(-1px);box-shadow:0 8px 24px rgba(14,26,43,.15)}
-.btn-light{display:block;border:1px solid var(--border);text-align:center;padding:14px;text-decoration:none;font-size:11px;letter-spacing:2px;margin-top:12px;color:var(--dark);transition:.3s}
+.btn-light{display:block;border:1px solid var(--border);text-align:center;padding:14px;text-decoration:none;font-size:11px;letter-spacing:2px;margin-top:12px;color:var(--dark)}
+.barra-flotante-contacto{position:fixed!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;z-index:9999!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;border-radius:28px!important;padding:14px 10px!important;background:rgba(253,250,244,0.72)!important;backdrop-filter:blur(22px) saturate(160%)!important;border:1px solid rgba(201,184,150,0.32)!important;box-shadow:0 24px 64px rgba(14,26,43,0.02)!important}
+.item-flotante{width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--dark)!important;text-decoration:none!important;transition:all .3s!important}
+.item-flotante.item-dorado{background:var(--dark)!important;color:var(--gold)!important;border-radius:50%!important;margin-top:4px!important}
 .footer-premium{background:var(--dark);color:#F9F6F1;padding:64px 48px 32px;margin-top:120px}
 #servicio{scroll-margin-top:120px}
 @media(max-width:900px){.page-hero{grid-template-columns:1fr;padding:140px 24px 48px}.page-hero h1{font-size:44px}.steps{grid-template-columns:1fr 1fr}}
@@ -48,80 +50,70 @@ h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 <a href="../index.html#servicios">SERVICIOS</a>
 <a href="../index.html#estudio">ESTUDIO</a>
 <a href="../index.html#contacto">CONTACTO</a>
+<a href="../portal.html" class="nav-link portal-link"><i class="fa-solid fa-lock"></i>CLIENTES</a>
 <a href="../index.html" class="btn-header">← VOLVER</a>
 </nav>
 </header>
-
+<div class="barra-flotante-contacto">
+<a href="https://www.google.com/maps/place/Escriban%C3%ADa+Riganti/" target="_blank" class="item-flotante"><i class="fa-solid fa-location-dot"></i></a>
+<a href="mailto:info@riganti.com.ar" class="item-flotante"><i class="fa-regular fa-envelope"></i></a>
+<a href="tel:+541143220174" class="item-flotante"><i class="fa-solid fa-phone"></i></a>
+<a href="../index.html#contacto" class="item-flotante item-dorado">→</a>
+</div>
 <div class="page-hero">
 <div class="content-col">
 <span class="badge">05 · SERVICIO PREMIUM · CONFIDENCIAL</span>
 <h1>Family Office<br><i>Notarial</i></h1>
-<p style="font-size:20px;color:var(--dark);margin-top:24px;line-height:1.5;max-width:620px">Custodiamos y ordenamos el patrimonio familiar bajo una misma estrategia jurídica. Unificamos inmuebles, sociedades, fideicomisos y sucesiones para garantizar la continuidad generacional sin juicios.</p>
-
+<p style="font-size:20px;color:var(--dark);margin-top:24px;line-height:1.5;max-width:620px">Custodiamos y ordenamos el patrimonio familiar bajo una misma estrategia jurídica. Unificamos inmuebles, sociedades, fideicomisos y sucesiones para garantizar la continuidad generacional.</p>
 <p>En RIGANTI no solo escrituramos bienes. Diseñamos estructuras que perduran. Pensado para familias con patrimonio diversificado que necesitan discreción absoluta, centralización y protección legal.</p>
-
 <div class="steps">
-<div class="step"><h4>01 · RELEVAMIENTO</h4><p>Mapa de activos, sociedades y contingencias. 48hs.</p></div>
-<div class="step"><h4>02 · DISEÑO</h4><p>Protocolo + fideicomisos + testamentos con usufructo.</p></div>
-<div class="step"><h4>03 · IMPLEMENTACIÓN</h4><p>Escrituras, poderes, cesiones y legajo único.</p></div>
+<div class="step"><h4>01 · RELEVAMIENTO</h4><p>Mapa de activos, sociedades y contingencias.</p></div>
+<div class="step"><h4>02 · DISEÑO</h4><p>Protocolo + fideicomisos + testamentos.</p></div>
+<div class="step"><h4>03 · IMPLEMENTACIÓN</h4><p>Escrituras, poderes y legajo único.</p></div>
 <div class="step"><h4>04 · MANTENIMIENTO</h4><p>Actualización anual y custodia.</p></div>
 </div>
-
 <h3 style="font-size:32px;margin-top:64px">Qué incluye</h3>
 <ul class="list-check">
-<li>Relevamiento integral de activos: inmuebles, sociedades, cuentas y participaciones</li>
-<li>Protocolo familiar y gobierno corporativo para empresas familiares (evita conflictos)</li>
-<li>Fideicomisos de administración y de protección patrimonial inembargable</li>
-<li>Planificación sucesoria: donaciones con reserva de usufructo, testamentos ológrafos</li>
-<li>Poderes de administración amplios, recíprocos y para incapacidad futura (clave)</li>
-<li>Centralización en único legajo notarial físico + digital con trazabilidad</li>
+<li>Relevamiento integral de activos: inmuebles, sociedades y participaciones</li>
+<li>Protocolo familiar y gobierno corporativo para empresas familiares</li>
+<li>Fideicomisos de administración y de protección patrimonial</li>
+<li>Planificación sucesoria: donaciones con reserva de usufructo, testamentos</li>
+<li>Poderes de administración amplios y para incapacidad futura</li>
+<li>Centralización en único legajo notarial físico + digital</li>
 </ul>
-
-<h3 style="font-size:32px;margin-top:64px">Ideal para</h3>
-<p>Familias empresarias, propietarios de 3+ inmuebles, inversores con sociedades en CABA y Provincia, y grupos familiares que buscan ordenar la transmisión a 2da generación sin que termine en sucesión litigiosa.</p>
-
 <blockquote style="margin:56px 0 0 0;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;opacity:.8">Una estructura bien hecha hoy evita 20 años de juicios sucesorios mañana.</blockquote>
-
 <div style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:16px">
-<div style="background:#fff;border:1px solid var(--border);padding:20px"><h4 style="font-size:10px;letter-spacing:2px">DESDE</h4><p style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:8px">USD 2.500<span style="font-size:14px;opacity:.5">/año</span></p><p style="font-size:11px;opacity:.5;margin-top:4px">Incluye legajo + 1 actualización</p></div>
+<div style="background:#fff;border:1px solid var(--border);padding:20px"><h4 style="font-size:10px;letter-spacing:2px">HONORARIOS</h4><p style="font-size:12px;margin-top:8px;line-height:1.6">Conforme arancel orientativo Colegio de Escribanos CABA. Presupuesto anual cerrado en reunión privada. Incluye legajo + actualizaciones.</p></div>
 <div style="background:var(--dark);color:#F9F6F1;padding:20px"><h4 style="font-size:10px;letter-spacing:2px;opacity:.5">TIEMPO PROMEDIO</h4><p style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:8px">21 días</p><p style="font-size:11px;opacity:.5;margin-top:4px">De relevamiento a firma</p></div>
 </div>
 </div>
-
 <div>
 <div class="sidebar">
 <h4>CONSULTA FAMILY OFFICE</h4>
-<p style="font-size:13px;opacity:.6;line-height:1.6">Atención exclusiva del escribano titular. Reunión privada en Maipú 497, 4° Piso. 100% confidencial.</p>
+<p style="font-size:13px;opacity:.6;line-height:1.6">Atención exclusiva del escribano titular. Reunión privada en Maipú 497. 100% confidencial.</p>
 <ul style="font-size:13px;margin-top:16px;line-height:2.2;opacity:.8;list-style:none">
 <li><i class="fa-solid fa-check" style="color:var(--gold-d);margin-right:8px"></i>Confidencialidad absoluta</li>
-<li><i class="fa-solid fa-check" style="color:var(--gold-d);margin-right:8px"></i>Honorarios fijos anuales - sin sorpresas</li>
+<li><i class="fa-solid fa-check" style="color:var(--gold-d);margin-right:8px"></i>Honorarios conforme arancel Colegio</li>
 <li><i class="fa-solid fa-check" style="color:var(--gold-d);margin-right:8px"></i>Legajo único digital + físico</li>
-<li><i class="fa-solid fa-check" style="color:var(--gold-d);margin-right:8px"></i>Protocolo válido en CABA y Provincia</li>
+<li><i class="fa-solid fa-check" style="color:var(--gold-d);margin-right:8px"></i>Secreto notarial art.16 Ley 404</li>
 </ul>
 <a href="../index.html#contacto" class="btn-dark">SOLICITAR REUNIÓN PRIVADA →</a>
 <a href="https://wa.me/5491123456789" class="btn-light"><i class="fa-brands fa-whatsapp"></i> WHATSAPP DIRECTO</a>
-<p style="font-size:10px;opacity:.4;margin-top:16px;text-align:center">Respuesta en menos de 2hs hábiles · Discreción garantizada</p>
 </div>
-
 <div style="margin-top:24px;background:var(--dark);color:#F9F6F1;padding:28px;border:1px solid rgba(255,255,255,.08)">
 <h4 style="font-size:10px;letter-spacing:2px;opacity:.5">ECOSISTEMA PATRIMONIAL</h4>
 <div style="margin-top:16px;display:flex;flex-direction:column;gap:12px;font-size:13px">
 <a href="fideicomisos.html" style="color:var(--gold);text-decoration:none;display:flex;justify-content:space-between">→ Fideicomisos <span style="opacity:.5">04</span></a>
-<a href="sucesiones.html" style="color:rgba(255,255,255,.6);text-decoration:none;display:flex;justify-content:space-between">→ Sucesiones y Donaciones <span style="opacity:.3">03</span></a>
+<a href="sucesiones.html" style="color:rgba(255,255,255,.6);text-decoration:none;display:flex;justify-content:space-between">→ Sucesiones <span style="opacity:.3">03</span></a>
 <a href="sociedades.html" style="color:rgba(255,255,255,.6);text-decoration:none;display:flex;justify-content:space-between">→ Sociedades <span style="opacity:.3">02</span></a>
 <a href="compraventa-inmueble.html" style="color:rgba(255,255,255,.6);text-decoration:none;display:flex;justify-content:space-between">→ Compraventa <span style="opacity:.3">01</span></a>
 </div>
 </div>
-
-<div style="margin-top:16px;border:1px solid var(--gold);padding:20px;background:rgba(201,184,150,.08)">
-<p style="font-size:11px;letter-spacing:1px;line-height:1.6"><strong style="color:var(--gold-d)">NOTA DE CONFIDENCIALIDAD:</strong> Toda la información relevada está protegida por secreto notarial (art. 16 Ley 404). No compartimos datos con terceros.</p>
 </div>
 </div>
-</div>
-
 <footer class="footer-premium">
 <div style="display:flex;justify-content:space-between;font-size:11px;opacity:.3">
-<span>© 2026 RIGANTI ESCRIBANÍA · FAMILY OFFICE · MAT. 1847 · 90 AÑOS</span>
+<span>© 2026 RIGANTI · FAMILY OFFICE · MAT. 1847</span>
 <span><a href="../index.html" style="color:inherit;text-decoration:none">VOLVER AL INICIO →</a></span>
 </div>
 </footer>
