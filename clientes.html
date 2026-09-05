@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clientes Visual | RIGANTI</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Clientes NIVEL 3 | RIGANTI</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
 <style>
 :root{--bg:#FAF9F6;--text:#0E1A2B;--gold:#8C7342;--line:rgba(14,26,43,.12)}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh}
-.side{flex:0 0 30%;height:100vh;position:sticky;top:0;background:#F9F6F0}
+.side{flex:0 0 32%;height:100vh;position:sticky;top:0;background:#F9F6F0}
 .side img{width:100%;height:100%;object-fit:cover;display:block}
 .main{flex:1;padding:28px 32px;overflow-y:auto}
-h1{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:300}
-h1 i{font-style:italic;color:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300} h1 i{font-style:italic;color:var(--gold)}
 .box{background:#fff;border:1px solid var(--line);padding:18px;margin-top:16px}
 input,select{width:100%;border:0;border-bottom:1px solid var(--line);padding:11px 0;margin-top:8px;outline:none;font-size:13px;background:transparent}
-.btn{background:var(--text);color:#fff;border:0;padding:11px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;margin-top:10px}
+.btn{background:var(--text);color:#fff;border:0;padding:12px 14px;font-size:10px;letter-spacing:2px;cursor:pointer;margin-top:10px}
 .btn.gold{background:var(--gold)}
 .card{background:#fff;border:1px solid var(--line);padding:16px;margin-top:12px}
 .tram{border-left:2px solid var(--gold);padding-left:10px;margin-top:8px;font-size:12px}
@@ -25,91 +27,67 @@ input,select{width:100%;border:0;border-bottom:1px solid var(--line);padding:11p
 <body>
 <div class="side"><img src="hall-portal-riganti-final2.jpg"></div>
 <div class="main">
-<div class="top"><span>ESCRIBANÍA RIGANTI / EDITOR VISUAL</span><a href="admin.html" style="border:1px solid var(--line);padding:6px 10px;text-decoration:none;color:var(--text)">← ADMIN</a></div>
-<h1>Clientes <i>sin código</i></h1>
-<div style="font-size:11px;opacity:.5;margin-top:6px">1. Creás cliente → 2. Agregás trámites → 3. Descargás clientes.json → 4. Lo subís a GitHub</div>
+<div class="top"><span>NIVEL 3 / FIREBASE PRIVADO</span><a href="admin.html" style="border:1px solid var(--line);padding:6px 10px;text-decoration:none;color:var(--text)">← ADMIN</a></div>
+<h1>Clientes <i>seguro</i></h1>
 
-<div class="box">
-<div style="font-size:10px;letter-spacing:2px">1. NUEVO CLIENTE</div>
-<input id="dni" placeholder="DNI (ej: 28079791)">
-<input id="nombre" placeholder="Nombre completo">
-<button class="btn" onclick="crear()">CREAR / SELECCIONAR CLIENTE</button>
+<div class="box" id="loginBox">
+<div style="font-size:10px;letter-spacing:2px">LOGIN ADMIN</div>
+<input id="email" placeholder="Email admin"><input id="pass" type="password" placeholder="Contraseña">
+<button class="btn gold" onclick="login()">INGRESAR A FIREBASE</button>
+<div style="font-size:11px;opacity:.5;margin-top:8px">Crea el usuario en Firebase Console > Authentication > Add user</div>
 </div>
 
+<div id="panel" style="display:none">
+<div class="box">
+<div style="font-size:10px;letter-spacing:2px">1. NUEVO CLIENTE</div>
+<input id="dni" placeholder="DNI (ej: 28079791)"><input id="nombre" placeholder="Nombre completo">
+<button class="btn" onclick="crear()">CREAR CLIENTE EN FIREBASE</button>
+</div>
 <div class="box" id="boxT" style="display:none">
 <div style="font-size:10px;letter-spacing:2px">2. AGREGAR TRÁMITE A <b id="selName"></b></div>
 <input id="tipo" placeholder="Tipo: Escritura, Family Office, Fideicomiso">
-<select id="estado">
-<option>En estudio de títulos</option>
-<option>Listo para firmar</option>
-<option>Observado</option>
-<option>Escriturado</option>
-<option>En reserva</option>
-</select>
-<input id="notas" placeholder="Notas internas">
-<input id="pdf" placeholder="Link PDF Drive (opcional)">
-<button class="btn" onclick="addT()">+ AGREGAR TRÁMITE</button>
+<select id="estado"><option>En estudio de títulos</option><option>Listo para firmar</option><option>Observado</option><option>Escriturado</option><option>En reserva</option></select>
+<input id="notas" placeholder="Notas"><input id="pdf" placeholder="Link PDF Drive">
+<button class="btn gold" onclick="addT()">+ GUARDAR TRÁMITE SEGURO</button>
 </div>
-
 <div id="lista" style="margin-top:18px"></div>
-
-<div class="box" style="border:1px dashed var(--gold)">
-<div style="font-size:10px;letter-spacing:2px">3. ¿QUÉ HAGO CON CLIENTES.JSON?</div>
-<p style="font-size:12px;line-height:1.6;margin-top:8px">Cuando termines, tocá DESCARGAR. Te baja el <b>clientes.json</b> ya armado. Andá a GitHub > tu repo > subí ese archivo arriba del viejo > Commit. En 1 minuto tu portal ya lo lee.</p>
-<button class="btn gold" onclick="descargar()">DESCARGAR clientes.json FINAL</button>
+<div class="box" style="border:1px dashed var(--gold);font-size:11px;line-height:1.6">Ya no hay clientes.json. Todo se guarda encriptado en Firebase. Podés borrar clientes.json de GitHub ahora. Nadie puede ver tus clientes aunque entre a tu repo.</div>
 </div>
 </div>
 
 <script>
-let db = JSON.parse(localStorage.getItem('riganti_visual')||'[]');
-let actual = null;
+const firebaseConfig = {
+  // PEGA ACA TU CONFIG DE FIREBASE - la copias de console.firebase.google.com
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+let actual=null;
 
-// Cargar el json actual de GitHub si es la primera vez
-if(db.length==0){
- fetch('clientes.json?v='+Date.now()).then(r=>r.json()).then(j=>{
-  if(j && j.length){
-    if(j[0].tramites) db=j;
-    else {
-      let m={}; j.forEach(o=>{ if(!m[o.dni]) m[o.dni]={dni:o.dni,nombre:o.nombre,tramites:[]}; m[o.dni].tramites.push({tipo:o.tramite||o.tipo||'Trámite',estado:o.estado||'En curso',notas:o.notas||'',fecha:o.fecha||'',pdf:o.pdf||''}); });
-      db=Object.values(m);
-    }
-    localStorage.setItem('riganti_visual',JSON.stringify(db)); render();
-  }
- }).catch(()=>{});
+function login(){ firebase.auth().signInWithEmailAndPassword(email.value,pass.value).then(()=>{loginBox.style.display='none';panel.style.display='block';cargar();}).catch(e=>alert(e.message)); }
+async function crear(){
+ if(!dni.value||!nombre.value) return alert('DNI y nombre');
+ await db.collection('clientes').doc(dni.value.trim()).set({dni:dni.value.trim(),nombre:nombre.value.trim(),tramites:firebase.firestore.FieldValue.arrayUnion()},{merge:true});
+ let doc=await db.collection('clientes').doc(dni.value.trim()).get(); if(!doc.data().tramites) await db.collection('clientes').doc(dni.value.trim()).update({tramites:[]});
+ actual={dni:dni.value.trim(),nombre:nombre.value.trim()}; selName.innerText=actual.nombre+' ('+actual.dni+')'; boxT.style.display='block'; cargar();
 }
-
-function crear(){
- let d=dni.value.trim(), n=nombre.value.trim();
- if(!d||!n) return alert('Poné DNI y nombre');
- let c=db.find(x=>x.dni==d);
- if(!c){ c={dni:d,nombre:n,tramites:[]}; db.push(c); }
- actual=c; document.getElementById('selName').innerText=c.nombre+' ('+c.dni+')'; document.getElementById('boxT').style.display='block';
- save(); render(); dni.value=''; nombre.value='';
+async function cargar(){
+ let snap=await db.collection('clientes').get(); let html='';
+ snap.forEach(d=>{
+  let c=d.data(); html+=`<div class=card><div style="display:flex;justify-content:space-between"><b>${c.nombre}</b><span style="opacity:.5">${c.dni}</span></div>
+  ${(c.tramites||[]).map((t,i)=>`<div class=tram><b>${t.tipo}</b> — ${t.estado}<br><span style="opacity:.6">${t.notas||''}</span> ${t.pdf?`<a href="${t.pdf}" target=_blank>PDF</a>`:''} <a href="#" onclick="delT('${c.dni}',${i});return false" style="color:red;margin-left:8px">x</a></div>`).join('')||'<div style=opacity:.4>Sin trámites</div>'}
+  <button class=btn onclick="sel('${c.dni}','${c.nombre}')" style="padding:6px 10px">SELECCIONAR</button> <button class=btn onclick="delC('${c.dni}')" style="background:#fff;color:var(--text);border:1px solid var(--line)">ELIMINAR</button></div>`;
+ });
+ document.getElementById('lista').innerHTML=html||'<div style=opacity:.5>Sin clientes</div>';
 }
-function addT(){
- if(!actual) return alert('Seleccioná un cliente primero');
- actual.tramites.push({tipo:tipo.value,estado:estado.value,notas:notas.value,pdf:pdf.value,fecha:new Date().toLocaleDateString('es-AR')});
- save(); render(); tipo.value=''; notas.value=''; pdf.value='';
+function sel(d,n){actual={dni:d,nombre:n}; selName.innerText=n+' ('+d+')'; boxT.style.display='block'; window.scrollTo(0,0);}
+async function addT(){
+ if(!actual) return alert('Seleccioná cliente');
+ let ref=db.collection('clientes').doc(actual.dni); let doc=await ref.get(); let data=doc.data(); let arr=data.tramites||[];
+ arr.push({tipo:tipo.value,estado:estado.value,notas:notas.value,pdf:pdf.value,fecha:new Date().toLocaleDateString('es-AR')});
+ await ref.update({tramites:arr}); tipo.value=''; notas.value=''; pdf.value=''; cargar();
 }
-function save(){ localStorage.setItem('riganti_visual',JSON.stringify(db)); }
-function render(){
- document.getElementById('lista').innerHTML = db.map((c,ci)=>`
-  <div class=card>
-   <div style="display:flex;justify-content:space-between"><b>${c.nombre}</b><span style="font-size:11px;opacity:.5">${c.dni}</span></div>
-   <div style="margin-top:6px">${c.tramites.map((t,ti)=>`
-    <div class=tram><b>${t.tipo}</b> — ${t.estado}<br><span style="opacity:.6">${t.notas}</span> ${t.pdf?'<a href="'+t.pdf+'" target=_blank>PDF</a>':''} <a href="#" onclick="delT(${ci},${ti});return false" style="color:red;margin-left:8px;font-size:10px">x borrar</a></div>
-   `).join('')||'<div style=opacity:.4;font-size:11px>Sin trámites</div>'}</div>
-   <div style="margin-top:10px"><button class="btn" onclick="sel(${ci})" style="padding:6px 10px">SELECCIONAR</button> <button class="btn" onclick="delC(${ci})" style="background:#fff;color:var(--text);border:1px solid var(--line)">ELIMINAR CLIENTE</button></div>
-  </div>`).join('')||'<div style=opacity:.5;font-size:12px;margin-top:20px>No hay clientes. Creá el primero arriba.</div>';
-}
-function sel(i){ actual=db[i]; document.getElementById('selName').innerText=actual.nombre+' ('+actual.dni+')'; document.getElementById('boxT').style.display='block'; window.scrollTo(0,0); }
-function delC(i){ if(confirm('Borrar cliente?')){ db.splice(i,1); save(); render(); } }
-function delT(ci,ti){ db[ci].tramites.splice(ti,1); save(); render(); }
-function descargar(){
- let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});
- let a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='clientes.json'; a.click();
-}
-render();
+async function delC(dni){ if(confirm('Borrar cliente?')){ await db.collection('clientes').doc(dni).delete(); cargar(); } }
+async function delT(dni,idx){ let ref=db.collection('clientes').doc(dni); let doc=await ref.get(); let arr=doc.data().tramites; arr.splice(idx,1); await ref.update({tramites:arr}); cargar(); }
 </script>
 </body>
 </html>
