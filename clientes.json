@@ -2,19 +2,26 @@
   {
     "dni": "28079791",
     "nombre": "Juan Pablo Riganti",
-    "tramite": "Family Office",
-    "estado": "En estudio de títulos",
-    "pdf": "",
-    "notas": "Cartera 3 inmuebles CABA - Falta reglamento Maipú 497",
-    "fecha": "13/05/2026"
+    "tramites": [
+      {
+        "tipo": "Family Office",
+        "estado": "En estudio de títulos",
+        "notas": "Cartera 3 inmuebles CABA - Falta reglamento Maipú 497",
+        "fecha": "13/05/2026",
+        "pdf": ""
+      },
+      {
+        "tipo": "Fideicomiso",
+        "estado": "Listo para firmar",
+        "notas": "Fideicomiso Al Costo - Turno jueves 10hs",
+        "fecha": "13/05/2026",
+        "pdf": "https://drive.google.com/file/d/ejemplo"
+      }
+    ]
   },
   {
-    "dni": "28079791",
-    "nombre": "Juan Pablo Riganti",
-    "tramite": "Fideicomiso",
-    "estado": "Listo para firmar",
-    "pdf": "https://drive.google.com/file/d/ejemplo",
-    "notas": "Fideicomiso Al Costo - Turno jueves 10hs",
-    "fecha": "13/05/2026"
+    "dni": "27027878",
+    "nombre": "Admin Riganti",
+    "tramites": []
   }
 ]
