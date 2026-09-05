@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>ADMIN RIGANTI</title>
+<script>
+let dniAdmin=prompt('DNI Administrador:');
+let clave=prompt('Clave:');
+if(dniAdmin!=='27027878' || clave!=='riganti2026'){document.write('<h1 style=color:red;padding:40px>ACCESO DENEGADO - DNI no autorizado</h1>');throw new Error('no auth');}
+</script>
+<style>body{font-family:monospace;background:#0E1A2B;color:#F9F6F1;padding:40px}input,select,textarea{width:100%;padding:10px;margin:6px 0;background:#1a2a45;border:1px solid #C9B896;color:#fff}button{background:#C9B896;color:#0E1A2B;padding:12px 20px;border:0;cursor:pointer;font-weight:bold;margin-top:10px}.card{background:#1a2a45;padding:20px;margin-top:20px;border-left:3px solid #C9B896}</style>
+</head><body>
+<h2>ADMIN RIGANTI | Admin: 27027878</h2>
+<p style="opacity:.5">Cliente de prueba: 28079791 - Juan Pablo Riganti</p>
+<div class="card">
+<label>DNI Cliente</label><input id="dni" value="28079791">
+<label>Nombre</label><input id="nombre" value="Juan Pablo Riganti">
+<label>Trámite</label><select id="tramite"><option>Compraventa</option><option selected>Family Office</option><option>Sociedades</option><option>Fideicomiso</option><option>Sucesión</option><option>Poder</option></select>
+<label>Estado</label><select id="estado"><option selected>En estudio de títulos</option><option>Observado</option><option>Listo para firmar</option><option>Escritura inscripta</option></select>
+<label>PDF Drive</label><input id="pdf" placeholder="https://...">
+<label>Notas</label><textarea id="notas"></textarea>
+<button onclick="guardar()">GUARDAR →</button>
+</div>
+<div id="lista" class="card"></div>
+<button onclick="descargarJSON()" style="background:#fff">DESCARGAR clientes.json</button>
+<script>
+let db = JSON.parse(localStorage.getItem('riganti_db')||'[{"dni":"28079791","nombre":"Juan Pablo Riganti","tramite":"Family Office","estado":"En estudio de títulos","pdf":"","notas":"Cliente de prueba","fecha":"13/05/2026"}]');
+function guardar(){let c={dni:dni.value,nombre:nombre.value,tramite:tramite.value,estado:estado.value,pdf:pdf.value,notas:notas.value,fecha:new Date().toLocaleDateString()};db.push(c);localStorage.setItem('riganti_db',JSON.stringify(db));render();pdf.value='';notas.value='';}
+function render(){lista.innerHTML='<h3>Cargados ('+db.length+')</h3>'+db.map((x,i)=>`<div style="border-bottom:1px solid #333;padding:8px 0">${x.dni} - ${x.nombre} - ${x.tramite} - <b>${x.estado}</b> <span onclick="borrar(${i})" style="color:red;cursor:pointer">[x]</span></div>`).join('');}
+function borrar(i){db.splice(i,1);localStorage.setItem('riganti_db',JSON.stringify(db));render();}
+function descargarJSON(){let b=new Blob([JSON.stringify(db,null,2)],{type:'application/json'});let a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='clientes.json';a.click();}
+render();
+</script>
+</body></html>
