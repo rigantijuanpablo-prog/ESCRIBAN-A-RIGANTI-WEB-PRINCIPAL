@@ -9,36 +9,69 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{--bg:#F9F6F1;--dark:#0E1A2B;--gold:#C9B896;--gold-d:#8C7342;--muted:rgba(14,26,43,.6);--border:#E8E2D9}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.7}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.7}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300}
+.eyebrow{font-size:10px;letter-spacing:4px;opacity:.5;text-transform:uppercase;display:block;margin-bottom:16px}
+.eyebrow.gold{color:var(--gold-d);opacity:1}
 .header-principal{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 32px;background:rgba(249,246,241,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,26,43,.08)}
-.logo img{height:72px;width:auto;display:block}.nav-principal{display:flex;gap:26px;align-items:center}.nav-principal a.nav-link{text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark);opacity:.7}
-.btn-header{border:1px solid rgba(14,26,43,.22);padding:12px 22px;text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark)}.lang-switch{margin-left:18px;border-left:1px solid rgba(14,26,43,.15);padding-left:18px;display:flex;gap:8px;font-size:11px}.active{font-weight:700}.inactive{opacity:.35;cursor:pointer}.sep{opacity:.2}
-.barra-flotante-contacto{position:fixed!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;z-index:9999!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;border-radius:28px!important;padding:14px 10px!important;background:rgba(253,250,244,0.72)!important;backdrop-filter:blur(22px) saturate(160%)!important;border:1px solid rgba(201,184,150,0.32)!important;box-shadow:0 24px 64px rgba(14,26,43,0.02),0 4px 16px rgba(14,26,43,0.01),inset 0 1px 0 rgba(255,255,255,0.95)!important}
-.item-flotante{width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--dark)!important;text-decoration:none!important;position:relative!important;z-index:2!important}
-.item-flotante.item-dorado{background:var(--dark)!important;color:var(--gold)!important;border-radius:50%!important;margin-top:4px!important}
-.barra-flotante-contacto a.item-flotante:first-child i{color:#a8232a!important;font-size:16px!important}
+.logo img{height:72px;width:auto;display:block}
+.nav-principal{display:flex;gap:26px;align-items:center}
+.nav-principal a.nav-link{text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark);opacity:.7}
+.btn-header{border:1px solid rgba(14,26,43,.22);padding:12px 22px;text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark)}
+.lang-switch{margin-left:18px;border-left:1px solid rgba(14,26,43,.15);padding-left:18px;display:flex;gap:8px;font-size:11px;align-items:center}
+.active{font-weight:700}.inactive{opacity:.35;cursor:pointer}.sep{opacity:.2}
+.nav-principal a.portal-link{color:var(--dark)!important;opacity:.8;display:inline-flex;align-items:center;gap:6px;font-weight:500;transition:.3s}
+.barra-flotante-contacto{position:fixed!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;z-index:9999!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;border-radius:28px!important;padding:14px 10px!important;width:auto!important;background:rgba(253,250,244,0.72)!important;backdrop-filter:blur(22px) saturate(160%)!important;-webkit-backdrop-filter:blur(22px) saturate(160%)!important;border:1px solid rgba(201,184,150,0.32)!important;border-top:1px solid rgba(255,255,255,0.8)!important;box-shadow:0 24px 64px rgba(14,26,43,0.02),0 4px 16px rgba(14,26,43,0.01),inset 0 1px 0 rgba(255,255,255,0.95)!important}
+.barra-flotante-contacto::before{content:""!important;position:absolute!important;inset:0!important;border-radius:inherit!important;background:radial-gradient(ellipse 180px 220px at 28% 18%,rgba(201,184,150,0.26) 0%,rgba(201,184,150,0.12) 35%,transparent 68%),radial-gradient(ellipse 160px 200px at 72% 38%,rgba(140,115,66,0.16) 0%,transparent 65%),radial-gradient(ellipse 200px 140px at 45% 75%,rgba(201,184,150,0.20) 0%,transparent 60%)!important;filter:blur(8px)!important;pointer-events:none!important;z-index:0!important}
+.barra-flotante-contacto::after{content:""!important;position:absolute!important;inset:0!important;border-radius:inherit!important;background:linear-gradient(100deg,transparent 30%,rgba(201,184,150,0.18) 32%,transparent 34%),linear-gradient(105deg,transparent 55%,rgba(140,115,66,0.14) 57%,transparent 59%)!important;filter:blur(1.2px)!important;pointer-events:none!important;z-index:0!important}
+.item-flotante{width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--dark)!important;text-decoration:none!important;position:relative!important;z-index:2!important;transition:all 0.3s cubic-bezier(.25,1,.5,1)!important}
+.item-flotante.item-dorado{background:var(--dark)!important;color:var(--gold)!important;border-radius:50%!important;margin-top:4px!important;box-shadow:0 4px 12px rgba(14,26,43,0.15)!important}
+.barra-flotante-contacto a.item-flotante:first-child i{color:#a8232a!important;font-size:16px!important;opacity:1!important;transition:all 0.3s cubic-bezier(0.25,1,0.5,1)!important}
 .barra-flotante-contacto a.item-flotante:first-child:hover i{color:#ce2c35!important;transform:translateY(-3px) scale(1.05)!important}
-.seccion-servicios{padding:0 48px 120px}.grid-servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}.card-serv{background:#fff;padding:36px 32px;display:block;text-decoration:none;color:inherit}.card-serv.dark{background:var(--dark);color:#F9F6F1}.card-num{font-family:'Cormorant Garamond',serif;color:rgba(140,115,66,.45);margin-bottom:16px}.card-serv.dark .card-num{color:var(--gold)}
-</style>
-</head>
-<body>
-<header class="header-principal"><a href="#" class="logo"><img src="logo-pluma-riganti-blanco-final.png" alt="RIGANTI"></a><nav class="nav-principal"><a href="#servicios" class="nav-link">SERVICIOS</a><a href="#estudio" class="nav-link">ESTUDIO</a><a href="#contacto" class="nav-link">CONTACTO</a><a href="portal.html" class="nav-link portal-link"><i class="fa-solid fa-lock"></i>CLIENTES</a><a href="#contacto" class="btn-header">SOLICITAR TURNO</a><div class="lang-switch"><span id="btn-es" class="active" onclick="setLang('es')">ES</span><span class="sep">|</span><span id="btn-en" class="inactive" onclick="setLang('en')">EN</span></div></nav></header>
-<div class="barra-flotante-contacto"><a href="https://www.google.com/maps/place/Escriban%C3%ADa+Riganti/" target="_blank" class="item-flotante"><i class="fa-solid fa-location-dot"></i></a><a href="mailto:info@riganti.com.ar" class="item-flotante"><i class="fa-regular fa-envelope"></i></a><a href="tel:+541143220174" class="item-flotante"><i class="fa-solid fa-phone"></i></a><a href="#contacto" class="item-flotante item-dorado">→</a></div>
-
-<section id="servicios" class="seccion-servicios"><div class="grid-servicios">
-<a href="servicios/compraventa-inmueble.html" class="card-serv"><div class="card-num">01</div><h3>Compraventa</h3><p>Escrituras, boletos y control exhaustivo de títulos.</p></a>
-<a href="servicios/sociedades.html" class="card-serv"><div class="card-num">02</div><h3>Sociedades</h3><p>Constitución, actas de directorio, poderes y reformas.</p></a>
-<a href="servicios/sucesiones.html" class="card-serv"><div class="card-num">03</div><h3>Familia y Sucesiones</h3><p>Donaciones, testamentos, protección de vivienda.</p></a>
-<a href="servicios/fideicomisos.html" class="card-serv"><div class="card-num">04</div><h3>Fideicomisos</h3><p>Estructuración, administración y auditoría fiduciaria.</p></a>
-<a href="servicios/family-office.html" class="card-serv dark"><div class="card-num">05</div><h3>Family Office</h3><p>Gestión patrimonial integral para familias.</p></a>
-<a href="servicios/poderes.html" class="card-serv"><div class="card-num">06</div><h3>Certificaciones</h3><p>Firmas, copias certificadas, actas de constatación.</p></a>
-</div></section>
-.section-estudio{padding:120px 48px;background:#fff}.estudio-main{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.15fr 380px;gap:80px;align-items:start}.valores-col{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);position:sticky;top:120px}.tarjeta-valor{background:var(--bg);padding:28px}.tarjeta-valor.dark{background:var(--dark);color:#F9F6F1;padding:32px 28px}
-.boceto-full-wrap{width:100%;overflow:hidden;border:1px solid var(--border);margin-top:24px;line-height:0}.boceto-full-img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}.boceto-caption{display:block;padding:12px 16px;font-size:9px;letter-spacing:2px;opacity:.4;text-transform:uppercase;background:#fff}
+.hero{min-height:90vh;padding:180px 48px 80px;display:flex;align-items:center}
+.hero-wrapper{max-width:820px}
+.hero h1{font-size:72px;line-height:.92;margin-bottom:28px}
+.hero h1 i{font-style:italic;color:var(--gold-d)}
+.hero p{max-width:560px;color:var(--muted)}
+.btn-hero{display:inline-block;margin-top:32px;background:var(--dark);color:#fff;padding:16px 32px;text-decoration:none;font-size:11px;letter-spacing:2px}
+.seccion-servicios{padding:0 48px 120px}
+.grid-servicios{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.card-serv{background:#fff;padding:36px 32px;display:block;text-decoration:none;color:inherit;transition:.3s}
+.card-serv:hover{background:#fdfcfa;transform:translateY(-1px)}
+.card-serv.dark{background:var(--dark);color:#F9F6F1}
+.card-num{font-family:'Cormorant Garamond',serif;color:rgba(140,115,66,.45);margin-bottom:16px}
+.card-serv.dark.card-num{color:var(--gold)}
+.card-serv h3{font-size:16px;font-weight:600;margin-bottom:8px}
+.card-serv p{font-size:13px;line-height:1.6;opacity:.7}
+.card-serv.dark p{color:rgba(249,246,241,.65)}
+.section-estudio{padding:120px 48px;background:#fff}
+.estudio-main{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.15fr 380px;gap:80px;align-items:start}
+.valores-col{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);position:sticky;top:120px}
+.tarjeta-valor{background:var(--bg);padding:28px}
+.tarjeta-valor.dark{background:var(--dark);color:#F9F6F1;padding:32px 28px}
+.boceto-full-wrap{width:100%;overflow:hidden;border:1px solid var(--border);margin-top:24px;line-height:0}
+.boceto-full-img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;display:block}
+.boceto-caption{display:block;padding:12px 16px;font-size:9px;letter-spacing:2px;opacity:.4;text-transform:uppercase;background:#fff}
 .section-estudio blockquote{margin:56px 0 0 0;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:26px;opacity:.8;max-width:520px}
-.seccion-cierre{position:relative;height:82vh;min-height:640px;overflow:hidden;background:var(--dark);display:flex;align-items:center;justify-content:center}.imagen-hall-wrap{position:absolute;inset:0}.imagen-hall{width:100%;height:100%;object-fit:cover;object-position:center 38%}.overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,26,43,.65),rgba(14,26,43,.35) 50%,rgba(14,26,43,.65))}.contenido-cierre{position:relative;z-index:3;text-align:center;color:#fff;max-width:620px}.contenido-cierre h2{font-size:56px}
-.seccion-contacto{padding:120px 48px;background:#fff;border-top:1px solid var(--border)}.contacto-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px}.form-contacto{display:flex;flex-direction:column;gap:28px}.form-contacto input,.form-contacto textarea{border:0;border-bottom:1px solid rgba(14,26,43,.12);padding:20px 0 16px 0;font-size:14px;background:transparent;outline:none}.form-contacto textarea{min-height:140px}.honeypot{display:none!important}.btn-enviar{background:var(--dark);color:#fff;height:56px;padding:0 32px;border:0;letter-spacing:2.5px;font-size:11px;cursor:pointer}
-.footer-premium{background:var(--dark);color:#F9F6F1;padding:96px 48px 32px}.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:80px}.logo-footer-img{width:130px;height:auto;display:block;margin-bottom:20px}.footer-bottom{max-width:1280px;margin:80px auto 0;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;font-size:11px;color:rgba(255,255,255,.25);display:flex;justify-content:space-between}
+.seccion-cierre{position:relative;height:82vh;min-height:640px;overflow:hidden;background:var(--dark);display:flex;align-items:center;justify-content:center}
+.imagen-hall-wrap{position:absolute;inset:0}
+.imagen-hall{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+.overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,26,43,.65),rgba(14,26,43,.35) 50%,rgba(14,26,43,.65))}
+.contenido-cierre{position:relative;z-index:3;text-align:center;color:#fff;max-width:620px}
+.contenido-cierre h2{font-size:56px}
+.seccion-contacto{padding:120px 48px;background:#fff;border-top:1px solid var(--border)}
+.contacto-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.form-contacto{display:flex;flex-direction:column;gap:28px}
+.form-contacto input,.form-contacto textarea{border:0;border-bottom:1px solid rgba(14,26,43,.12);padding:20px 0 16px 0;font-size:14px;background:transparent;outline:none;font-family:'Inter',sans-serif}
+.form-contacto textarea{min-height:140px;resize:vertical}
+.honeypot{display:none!important}
+.btn-enviar{background:var(--dark);color:#fff;height:56px;padding:0 32px;border:0;letter-spacing:2.5px;font-size:11px;cursor:pointer;transition:.3s}
+.btn-enviar:hover{background:#1c2e4a}
+.footer-premium{background:var(--dark);color:#F9F6F1;padding:96px 48px 32px}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:80px}
+.logo-footer-img{width:130px;height:auto;display:block;margin-bottom:20px}
+.footer-bottom{max-width:1280px;margin:80px auto 0;border-top:1px solid rgba(255,255,255,.07);padding-top:24px;font-size:11px;color:rgba(255,255,255,.25);display:flex;justify-content:space-between}
 @media(max-width:900px){.grid-servicios{grid-template-columns:1fr 1fr}.estudio-main{grid-template-columns:1fr}.contacto-grid{grid-template-columns:1fr}.hero h1{font-size:48px}}
 </style>
 </head>
@@ -54,22 +87,37 @@
 <div class="lang-switch"><span id="btn-es" class="active" onclick="setLang('es')">ES</span><span class="sep">|</span><span id="btn-en" class="inactive" onclick="setLang('en')">EN</span></div>
 </nav>
 </header>
+
 <div class="barra-flotante-contacto">
 <a href="https://www.google.com/maps/place/Escriban%C3%ADa+Riganti/@-34.6024583,-58.3792124,682m/data=!3m2!1e3!4b1!4m6!3m5!1s0x95bccba231bf927d:0xa9496576cc417e6e!8m2!3d-34.6024627!4d-58.3766375!16s%2Fg%2F11rr2ff1bj?entry=ttu" target="_blank" class="item-flotante"><i class="fa-solid fa-location-dot"></i></a>
 <a href="mailto:info@riganti.com.ar" class="item-flotante"><i class="fa-regular fa-envelope"></i></a>
 <a href="tel:+541143220174" class="item-flotante"><i class="fa-solid fa-phone"></i></a>
 <a href="#contacto" class="item-flotante item-dorado">→</a>
 </div>
+
 <section class="hero"><div class="hero-wrapper"><span class="eyebrow" data-i18n="hero_eyebrow">Seguridad jurídica · CABA</span><h1 data-i18n="hero_title">RIGANTI<br><i>Escribanía</i></h1><p data-i18n="hero_sub">90 años de tradición notarial en Buenos Aires. Rigor técnico, discreción absoluta y atención personalizada del escribano titular.</p><a href="#contacto" class="btn-hero" data-i18n="btn_turno">SOLICITAR TURNO →</a></div></section>
-<section id="servicios" class="seccion-servicios"><div class="grid-servicios"><div class="card-serv"><div class="card-num">01</div><h3 data-i18n="serv_compra_t">Compraventa</h3><p data-i18n="serv_compra_d">Escrituras, boletos y control exhaustivo de títulos.</p></div><div class="card-serv"><div class="card-num">02</div><h3 data-i18n="serv_soc_t">Sociedades</h3><p data-i18n="serv_soc_d">Constitución, actas de directorio, poderes y reformas.</p></div><div class="card-serv"><div class="card-num">03</div><h3 data-i18n="serv_fam_t">Familia y Sucesiones</h3><p data-i18n="serv_fam_d">Donaciones, testamentos, protección de vivienda.</p></div><div class="card-serv"><div class="card-num">04</div><h3 data-i18n="serv_cert_t">Certificaciones</h3><p data-i18n="serv_cert_d">Firmas, copias certificadas, actas de constatación.</p></div></div></section>
+
+<section id="servicios" class="seccion-servicios"><div class="grid-servicios">
+<a href="servicios/compraventa-inmueble.html" class="card-serv"><div class="card-num">01</div><h3 data-i18n="serv_compra_t">Compraventa</h3><p data-i18n="serv_compra_d">Escrituras, boletos y control exhaustivo de títulos.</p></a>
+<a href="servicios/sociedades.html" class="card-serv"><div class="card-num">02</div><h3 data-i18n="serv_soc_t">Sociedades</h3><p data-i18n="serv_soc_d">Constitución, actas de directorio, poderes y reformas.</p></a>
+<a href="servicios/sucesiones.html" class="card-serv"><div class="card-num">03</div><h3 data-i18n="serv_fam_t">Familia y Sucesiones</h3><p data-i18n="serv_fam_d">Donaciones, testamentos, protección de vivienda.</p></a>
+<a href="servicios/fideicomisos.html" class="card-serv"><div class="card-num">04</div><h3 data-i18n="serv_fide_t">Fideicomisos</h3><p data-i18n="serv_fide_d">Estructuración, administración y auditoría fiduciaria.</p></a>
+<a href="servicios/family-office.html" class="card-serv dark"><div class="card-num">05</div><h3 data-i18n="serv_family_t">Family Office</h3><p data-i18n="serv_family_d">Gestión patrimonial integral para familias.</p></a>
+<a href="servicios/poderes.html" class="card-serv"><div class="card-num">06</div><h3 data-i18n="serv_cert_t">Certificaciones</h3><p data-i18n="serv_cert_d">Firmas, copias certificadas, actas de constatación.</p></a>
+</div></section>
+
 <section id="estudio" class="section-estudio"><div class="estudio-main"><div><span class="eyebrow gold" data-i18n="estudio_eyebrow">90 AÑOS DE TRADICIÓN</span><h2 style="font-size:52px;line-height:.95" data-i18n="estudio_title">Tres generaciones<br><i style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-d)">custodiando su patrimonio.</i></h2><p style="margin-top:16px;opacity:.6;max-width:520px" data-i18n="estudio_p">Somos herederos de una tradición notarial de 90 años.</p><div class="boceto-full-wrap"><img src="sala-escribania-mitad.jpg" class="boceto-full-img" alt="Mesa" loading="lazy"><span class="boceto-caption">Mesa de acuerdos · Boceto → Realidad · Sede Microcentro</span></div><blockquote data-i18n="estudio_quote">"Una escritura bien hecha perdura por generaciones."</blockquote></div><div class="valores-col"><div class="tarjeta-valor"><h4 data-i18n="val_seg_t">SEGURIDAD JURÍDICA</h4><p data-i18n="val_seg_d">Control exhaustivo de títulos.</p></div><div class="tarjeta-valor"><h4 data-i18n="val_disc_t">DISCRECIÓN ABSOLUTA</h4><p data-i18n="val_disc_d">Trato directo con titular.</p></div><div class="tarjeta-valor"><h4 data-i18n="val_agil_t">AGILIDAD NOTARIAL</h4><p data-i18n="val_agil_d">Gestión integral ante registros.</p></div><div class="tarjeta-valor dark"><h4>TRADICIÓN · MAT. 1847</h4><p>Colegio de Escribanos CABA desde 1936.</p></div></div></div></section>
+
 <section class="seccion-cierre"><div class="imagen-hall-wrap"><img src="hall-escribania-mitad.jpg" class="imagen-hall" alt="Hall" loading="lazy"><div class="overlay"></div></div><div class="contenido-cierre"><span class="eyebrow" style="color:var(--gold)" data-i18n="sede_eyebrow">NUESTRA SEDE</span><h2 data-i18n="sede_title">Microcentro</h2><p style="margin-top:16px" data-i18n="sede_desc">Maipú 497, 4° Piso. Atención privada y discreta.</p><a href="#contacto" class="btn-hero" style="background:#fff;color:var(--dark)" data-i18n="btn_turno">SOLICITAR TURNO →</a></div></section>
+
 <section id="contacto" class="seccion-contacto"><div class="contacto-grid"><div><h2 style="font-size:46px;line-height:.95" data-i18n="contacto_title">Agende su<br><i style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold-d)">turno privado</i></h2><p style="margin-top:16px;opacity:.6;line-height:1.9" data-i18n="contacto_info">Maipú 497, 4° Piso<br>C1023AAR · CABA<br>+54 11 4800-1234<br>info@riganti.com.ar</p></div><form class="form-contacto" id="formContacto"><input type="text" name="website" class="honeypot"><input type="text" id="nombre" name="nombre" data-i18n-placeholder="form_nombre" placeholder="Nombre y apellido *" required><input type="email" id="email" name="email" data-i18n-placeholder="form_email" placeholder="Email *" required><input type="tel" id="telefono" name="telefono" data-i18n-placeholder="form_tel" placeholder="Teléfono *" required><textarea id="mensaje" name="mensaje" data-i18n-placeholder="form_msg" placeholder="Consulta *" required></textarea><button type="submit" class="btn-enviar" id="btnEnviar" data-i18n="form_btn">ENVIAR CONSULTA →</button><p id="formStatus" style="font-size:12px;display:none;margin-top:12px"></p></form></div></section>
-<footer class="footer-premium"><div class="footer-grid"><div><img src="logo-completo-pluma-transparente.png" alt="RIGANTI" class="logo-footer-img"></div><div><span>SERVICIOS</span><p style="margin-top:16px;font-size:13px;opacity:.6">Compraventa<br>Sociedades<br>Sucesiones</p></div><div><span>MICROCENTRO</span><p style="margin-top:16px;font-size:13px;opacity:.6">Maipú 497, 4° Piso<br>CABA</p></div><div><span>TURNOS</span><p style="margin-top:16px;font-size:13px;opacity:.6">Atención personalizada</p></div></div><div class="footer-bottom"><span>© 2026 RIGANTI ESCRIBANÍA</span><span>COLEGIO DE ESCRIBANOS CABA</span></div></footer>
+
+<footer class="footer-premium"><div class="footer-grid"><div><img src="logo-completo-pluma-transparente.png" alt="RIGANTI" class="logo-footer-img"></div><div><span>SERVICIOS</span><p style="margin-top:16px;font-size:13px;opacity:.6">Compraventa<br>Sociedades<br>Fideicomisos<br>Family Office<br>Sucesiones<br>Certificaciones</p></div><div><span>MICROCENTRO</span><p style="margin-top:16px;font-size:13px;opacity:.6">Maipú 497, 4° Piso<br>CABA</p></div><div><span>TURNOS</span><p style="margin-top:16px;font-size:13px;opacity:.6">Atención personalizada</p></div></div><div class="footer-bottom"><span>© 2026 RIGANTI ESCRIBANÍA</span><span>COLEGIO DE ESCRIBANOS CABA</span></div></footer>
+
 <script>
 const T={
-es:{nav_serv:"SERVICIOS",nav_est:"ESTUDIO",nav_cont:"CONTACTO",nav_clientes:'<i class="fa-solid fa-lock"></i>CLIENTES',btn_turno_header:"SOLICITAR TURNO",hero_eyebrow:"Seguridad jurídica · CABA",hero_title:"RIGANTI<br><i>Escribanía</i>",hero_sub:"90 años de tradición notarial en Buenos Aires. Rigor técnico, discreción absoluta y atención personalizada del escribano titular.",btn_turno:"SOLICITAR TURNO →",serv_compra_t:"Compraventa",serv_compra_d:"Escrituras, boletos y control exhaustivo de títulos.",serv_soc_t:"Sociedades",serv_soc_d:"Constitución, actas de directorio, poderes y reformas.",serv_fam_t:"Familia y Sucesiones",serv_fam_d:"Donaciones, testamentos, protección de vivienda.",serv_cert_t:"Certificaciones",serv_cert_d:"Firmas, copias certificadas, actas de constatación.",estudio_eyebrow:"90 AÑOS DE TRADICIÓN",estudio_title:'Tres generaciones<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">custodiando su patrimonio.</i>',estudio_p:"Somos herederos de una tradición notarial de 90 años.",estudio_quote:'"Una escritura bien hecha perdura por generaciones."',val_seg_t:"SEGURIDAD JURÍDICA",val_seg_d:"Control exhaustivo de títulos.",val_disc_t:"DISCRECIÓN ABSOLUTA",val_disc_d:"Trato directo con titular.",val_agil_t:"AGILIDAD NOTARIAL",val_agil_d:"Gestión integral ante registros.",sede_eyebrow:"NUESTRA SEDE",sede_title:"Microcentro",sede_desc:"Maipú 497, 4° Piso. Atención privada y discreta.",contacto_title:'Agende su<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">turno privado</i>',contacto_info:"Maipú 497, 4° Piso<br>C1023AAR · CABA<br>+54 11 4800-1234<br>info@riganti.com.ar",form_nombre:"Nombre y apellido *",form_email:"Email *",form_tel:"Teléfono / WhatsApp *",form_msg:"Consulta *",form_btn:"ENVIAR CONSULTA →"},
-en:{nav_serv:"SERVICES",nav_est:"ABOUT",nav_cont:"CONTACT",nav_clientes:'<i class="fa-solid fa-lock"></i>CLIENTS',btn_turno_header:"BOOK APPOINTMENT",hero_eyebrow:"Legal security · CABA",hero_title:"RIGANTI<br><i>Notary Office</i>",hero_sub:"90 years of notarial tradition in Buenos Aires. Technical rigor, absolute discretion.",btn_turno:"BOOK APPOINTMENT →",serv_compra_t:"Real Estate",serv_compra_d:"Deeds, title search and debt control.",serv_soc_t:"Corporate",serv_soc_d:"Incorporation, board minutes and powers.",serv_fam_t:"Family & Probate",serv_fam_d:"Donations, wills and homestead protection.",serv_cert_t:"Certifications",serv_cert_d:"Signature certification and notarial acts.",estudio_eyebrow:"90 YEARS OF TRADITION",estudio_title:'Three generations<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">safeguarding your assets.</i>',estudio_p:"We are heirs to a 90-year notarial tradition.",estudio_quote:'"A well-drafted deed endures for generations."',val_seg_t:"LEGAL SECURITY",val_seg_d:"Exhaustive title search.",val_disc_t:"ABSOLUTE DISCRETION",val_disc_d:"Direct dealing with notary.",val_agil_t:"NOTARIAL AGILITY",val_agil_d:"Comprehensive management.",sede_eyebrow:"OUR OFFICE",sede_title:"Downtown",sede_desc:"Maipú 497, 4th Floor. Private attention.",contacto_title:'Book your<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">private appointment</i>',contacto_info:"Maipú 497, 4th Floor<br>C1023AAR · CABA<br>+54 11 4800-1234<br>info@riganti.com.ar",form_nombre:"Full name *",form_email:"Email *",form_tel:"Phone / WhatsApp *",form_msg:"Inquiry *",form_btn:"SEND INQUIRY →"}
+es:{nav_serv:"SERVICIOS",nav_est:"ESTUDIO",nav_cont:"CONTACTO",nav_clientes:'<i class="fa-solid fa-lock"></i>CLIENTES',btn_turno_header:"SOLICITAR TURNO",hero_eyebrow:"Seguridad jurídica · CABA",hero_title:"RIGANTI<br><i>Escribanía</i>",hero_sub:"90 años de tradición notarial en Buenos Aires. Rigor técnico, discreción absoluta y atención personalizada del escribano titular.",btn_turno:"SOLICITAR TURNO →",serv_compra_t:"Compraventa",serv_compra_d:"Escrituras, boletos y control exhaustivo de títulos.",serv_soc_t:"Sociedades",serv_soc_d:"Constitución, actas de directorio, poderes y reformas.",serv_fam_t:"Familia y Sucesiones",serv_fam_d:"Donaciones, testamentos, protección de vivienda.",serv_fide_t:"Fideicomisos",serv_fide_d:"Estructuración, administración y auditoría fiduciaria.",serv_family_t:"Family Office",serv_family_d:"Gestión patrimonial integral para familias.",serv_cert_t:"Certificaciones",serv_cert_d:"Firmas, copias certificadas, actas de constatación.",estudio_eyebrow:"90 AÑOS DE TRADICIÓN",estudio_title:'Tres generaciones<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">custodiando su patrimonio.</i>',estudio_p:"Somos herederos de una tradición notarial de 90 años.",estudio_quote:'"Una escritura bien hecha perdura por generaciones."',val_seg_t:"SEGURIDAD JURÍDICA",val_seg_d:"Control exhaustivo de títulos.",val_disc_t:"DISCRECIÓN ABSOLUTA",val_disc_d:"Trato directo con titular.",val_agil_t:"AGILIDAD NOTARIAL",val_agil_d:"Gestión integral ante registros.",sede_eyebrow:"NUESTRA SEDE",sede_title:"Microcentro",sede_desc:"Maipú 497, 4° Piso. Atención privada y discreta.",contacto_title:'Agende su<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">turno privado</i>',contacto_info:"Maipú 497, 4° Piso<br>C1023AAR · CABA<br>+54 11 4800-1234<br>info@riganti.com.ar",form_nombre:"Nombre y apellido *",form_email:"Email *",form_tel:"Teléfono / WhatsApp *",form_msg:"Consulta *",form_btn:"ENVIAR CONSULTA →"},
+en:{nav_serv:"SERVICES",nav_est:"ABOUT",nav_cont:"CONTACT",nav_clientes:'<i class="fa-solid fa-lock"></i>CLIENTS',btn_turno_header:"BOOK APPOINTMENT",hero_eyebrow:"Legal security · CABA",hero_title:"RIGANTI<br><i>Notary Office</i>",hero_sub:"90 years of notarial tradition in Buenos Aires. Technical rigor, absolute discretion.",btn_turno:"BOOK APPOINTMENT →",serv_compra_t:"Real Estate",serv_compra_d:"Deeds, title search and debt control.",serv_soc_t:"Corporate",serv_soc_d:"Incorporation, board minutes and powers.",serv_fam_t:"Family & Probate",serv_fam_d:"Donations, wills and homestead protection.",serv_fide_t:"Trusts",serv_fide_d:"Structuring, administration and fiduciary audit.",serv_family_t:"Family Office",serv_family_d:"Comprehensive wealth management.",serv_cert_t:"Certifications",serv_cert_d:"Signature certification and notarial acts.",estudio_eyebrow:"90 YEARS OF TRADITION",estudio_title:'Three generations<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">safeguarding your assets.</i>',estudio_p:"We are heirs to a 90-year notarial tradition.",estudio_quote:'"A well-drafted deed endures for generations."',val_seg_t:"LEGAL SECURITY",val_seg_d:"Exhaustive title search.",val_disc_t:"ABSOLUTE DISCRETION",val_disc_d:"Direct dealing with notary.",val_agil_t:"NOTARIAL AGILITY",val_agil_d:"Comprehensive management.",sede_eyebrow:"OUR OFFICE",sede_title:"Downtown",sede_desc:"Maipú 497, 4th Floor. Private attention.",contacto_title:'Book your<br><i style="font-family:\'Cormorant Garamond\',serif;font-style:italic;color:var(--gold-d)">private appointment</i>',contacto_info:"Maipú 497, 4th Floor<br>C1023AAR · CABA<br>+54 11 4800-1234<br>info@riganti.com.ar",form_nombre:"Full name *",form_email:"Email *",form_tel:"Phone / WhatsApp *",form_msg:"Inquiry *",form_btn:"SEND INQUIRY →"}
 };
 function setLang(l){
   localStorage.setItem('riganti_lang',l);
@@ -84,8 +132,8 @@ function setLang(l){
     if(T[l][k])el.placeholder=T[l][k]
   });
   document.documentElement.lang=l;
-  const portalLink = document.querySelector('a[href*="portal.html"]');
-  if(portalLink){ portalLink.href = l==='en'? 'portal.html?lang=en' : 'portal.html?lang=es'; }
+  const portalLink=document.querySelector('a[href*="portal.html"]');
+  if(portalLink){portalLink.href=l==='en'?'portal.html?lang=en':'portal.html?lang=es';}
 }
 setLang(localStorage.getItem('riganti_lang')||'es');
 </script>
@@ -93,43 +141,35 @@ setLang(localStorage.getItem('riganti_lang')||'es');
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyDORKK4W6z9QZn3eg85cdH4-2T415vvyT0",
-  authDomain: "escribania-riganti.firebaseapp.com",
-  projectId: "escribania-riganti",
-  storageBucket: "escribania-riganti.firebasestorage.app",
-  messagingSenderId: "725421481175",
-  appId: "1:725421481175:web:4f88461975d9f26eb06492"
+const firebaseConfig={
+  apiKey:"AIzaSyDORKK4W6z9QZn3eg85cdH4-2T415vvyT0",
+  authDomain:"escribania-riganti.firebaseapp.com",
+  projectId:"escribania-riganti",
+  storageBucket:"escribania-riganti.firebasestorage.app",
+  messagingSenderId:"725421481175",
+  appId:"1:725421481175:web:4f88461975d9f26eb06492"
 };
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const form = document.getElementById('formContacto');
-const btn = document.getElementById('btnEnviar');
-const status = document.getElementById('formStatus');
-form.addEventListener('submit', async (e) => {
+const app=initializeApp(firebaseConfig);
+const db=getFirestore(app);
+const form=document.getElementById('formContacto');
+const btn=document.getElementById('btnEnviar');
+const status=document.getElementById('formStatus');
+form.addEventListener('submit',async(e)=>{
   e.preventDefault();
-  if(form.website && form.website.value) return;
-  const lang = localStorage.getItem('riganti_lang')||'es';
+  if(form.website.value) return;
+  const lang=localStorage.getItem('riganti_lang')||'es';
   btn.disabled=true;
   const orig=btn.textContent;
-  btn.textContent= lang==='en'? 'SENDING...' : 'ENVIANDO...';
+  btn.textContent=lang==='en'?'SENDING...':'ENVIANDO...';
   status.style.display='none';
-  const data = {
-    nombre: document.getElementById('nombre').value.trim(),
-    email: document.getElementById('email').value.trim(),
-    telefono: document.getElementById('telefono').value.trim(),
-    mensaje: document.getElementById('mensaje').value.trim(),
-    fecha: serverTimestamp(),
-    origen: 'riganti.com.ar',
-    lang: lang
-  };
+  const data={nombre:document.getElementById('nombre').value.trim(),email:document.getElementById('email').value.trim(),telefono:document.getElementById('telefono').value.trim(),mensaje:document.getElementById('mensaje').value.trim(),fecha:serverTimestamp(),origen:'riganti.com.ar',lang:lang};
   try{
     await addDoc(collection(db,"consultas"),data);
     form.reset();
     status.style.display='block';
     status.style.color='#0a7a42';
-    status.textContent = lang==='en'? '✓ Inquiry sent successfully' : '✓ Consulta enviada correctamente. Te contactamos a la brevedad.';
-    btn.textContent = lang==='en'? 'SENT ✓' : 'ENVIADO ✓';
+    status.textContent=lang==='en'?'✓ Inquiry sent successfully':'✓ Consulta enviada correctamente. Te contactamos a la brevedad.';
+    btn.textContent=lang==='en'?'SENT ✓':'ENVIADO ✓';
     setTimeout(()=>{btn.textContent=orig;btn.disabled=false;},3500);
   }catch(err){
     status.style.display='block';
