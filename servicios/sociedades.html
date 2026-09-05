@@ -3,16 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Sociedades CABA | Constitución SA SAS SRL en 48hs | RIGANTI Escribanía</title>
-<meta name="description" content="Constitución de SA, SAS, SRL en CABA. Trámite integral IGJ y AFIP. Actas, reformas, poderes y cesión de cuotas. Estatutos a medida. RIGANTI 90 años.">
+<title>Sociedades CABA | RIGANTI Escribanía</title>
 <link rel="icon" type="image/png" href="../favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{--bg:#F9F6F1;--dark:#0E1A2B;--gold:#C9B896;--gold-d:#8C7342;--muted:rgba(14,26,43,.6);--border:#E8E2D9}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
 h1,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .header{position:fixed;top:0;left:0;right:0;height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 32px;background:rgba(249,246,241,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,26,43,.08);z-index:1000}
+.nav-principal{display:flex;gap:26px;align-items:center}
+.nav-principal a{font-size:11px;letter-spacing:2px;text-decoration:none;color:var(--dark);opacity:.7}
+.nav-principal a.portal-link{opacity:.8;display:inline-flex;align-items:center;gap:6px;font-weight:500}
 .hero{padding:168px 48px 80px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 380px;gap:80px;align-items:start}
 h1{font-size:60px;line-height:.9}h1 i{font-style:italic;color:var(--gold-d)}
 .badge{border:1px solid var(--gold);color:var(--gold-d);padding:6px 14px;font-size:9px;letter-spacing:3px;display:inline-block;margin-bottom:20px}
@@ -26,65 +29,70 @@ h1{font-size:60px;line-height:.9}h1 i{font-style:italic;color:var(--gold-d)}
 .list li:hover::before{transform:scaleX(1)}
 .side{background:#fff;border:1px solid var(--border);padding:32px;position:sticky;top:120px}
 .btn{background:var(--dark);color:#fff;padding:18px;display:block;text-align:center;text-decoration:none;font-size:11px;letter-spacing:2.5px;margin-top:20px;transition:.3s}
-.btn:hover{background:#1c2e4a}
 .side-dark{background:var(--dark);color:#F9F6F1;padding:24px;margin-top:16px}
 .comparison{margin-top:32px;border:1px solid var(--border);background:#fff}
-.comparison-header{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);font-size:10px;letter-spacing:2px;padding:0}
+.comparison-header{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);font-size:10px;letter-spacing:2px}
 .comparison-header div{background:var(--dark);color:#fff;padding:12px 16px}
 .comparison-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);font-size:13px}
 .comparison-row div{background:#fff;padding:12px 16px}
+.barra-flotante-contacto{position:fixed!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;z-index:9999!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;border-radius:28px!important;padding:14px 10px!important;background:rgba(253,250,244,0.72)!important;backdrop-filter:blur(22px) saturate(160%)!important;border:1px solid rgba(201,184,150,0.32)!important;box-shadow:0 24px 64px rgba(14,26,43,0.02)!important}
+.item-flotante{width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--dark)!important;text-decoration:none!important}
+.item-flotante.item-dorado{background:var(--dark)!important;color:var(--gold)!important;border-radius:50%!important;margin-top:4px!important}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding:140px 24px 48px}.steps{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header class="header"><a href="../index.html"><img src="../logo-pluma-riganti-blanco-final.png" style="height:72px" alt="RIGANTI"></a><a href="../index.html" style="text-decoration:none;font-size:11px;letter-spacing:2px;border:1px solid var(--border);padding:12px 22px;color:var(--dark)">← INICIO</a></header>
-
+<header class="header">
+<a href="../index.html"><img src="../logo-pluma-riganti-blanco-final.png" style="height:72px" alt="RIGANTI"></a>
+<nav class="nav-principal">
+<a href="../index.html#servicios">SERVICIOS</a>
+<a href="../portal.html" class="portal-link"><i class="fa-solid fa-lock"></i>CLIENTES</a>
+<a href="../index.html" style="border:1px solid var(--border);padding:12px 22px">← INICIO</a>
+</nav>
+</header>
+<div class="barra-flotante-contacto">
+<a href="https://www.google.com/maps/place/Escriban%C3%ADa+Riganti/" target="_blank" class="item-flotante"><i class="fa-solid fa-location-dot"></i></a>
+<a href="mailto:info@riganti.com.ar" class="item-flotante"><i class="fa-regular fa-envelope"></i></a>
+<a href="tel:+541143220174" class="item-flotante"><i class="fa-solid fa-phone"></i></a>
+<a href="../index.html#contacto" class="item-flotante item-dorado">→</a>
+</div>
 <div class="hero">
 <div>
 <span class="badge">02 · SOCIETARIO · IGJ CABA</span>
 <h1>Sociedades<br><i>SA · SAS · SRL</i></h1>
-<p class="lead">Constitución en 48hs con trámite integral ante IGJ y AFIP. Estatutos a medida, no modelos genéricos. Definimos administración, garantías y sucesión empresaria con vos.</p>
-
+<p class="lead">Constitución en 48hs con trámite integral ante IGJ y AFIP. Estatutos a medida, no modelos genéricos.</p>
 <div class="steps">
 <div class="step"><h4>01 · DISEÑO</h4><p>Tipo societario, objeto, capital, administración y fiscalización.</p></div>
 <div class="step"><h4>02 · CONSTITUCIÓN</h4><p>Escritura + inscripción IGJ + CUIT + libros rubricados.</p></div>
 <div class="step"><h4>03 · OPERATIVA</h4><p>Actas, poderes, reformas, cesiones y cierre.</p></div>
 </div>
-
 <div class="comparison">
 <div class="comparison-header"><div></div><div>VENTAJA</div><div>PARA QUIÉN</div></div>
 <div class="comparison-row"><div><strong>SAS</strong></div><div>24hs, 1 socio, capital bajo</div><div>Startup / MVP</div></div>
 <div class="comparison-row"><div><strong>SRL</strong></div><div>Simple, cuotas, familiar</div><div>Pyme familiar</div></div>
 <div class="comparison-row"><div><strong>SA</strong></div><div>Directorio, acciones, inversión</div><div>Empresa con inversores</div></div>
 </div>
-
 <h3 style="font-size:32px;margin-top:56px">Servicios societarios</h3>
 <ul class="list" style="margin-top:24px">
-<li><strong>Constitución SA, SAS, SRL:</strong> Con estatuto a medida + cláusula de gobierno + acuerdo de socios (si hay inversores).</li>
-<li><strong>Actas de directorio y asamblea:</strong> Con quorum, mayorías y responsabilidad de administradores (art. 59 LGS).</li>
-<li><strong>Reforma de estatuto y aumento de capital:</strong> Cambio de objeto, sede, administración. Con dictamen y publicación.</li>
-<li><strong>Poderes generales de administración y especiales:</strong> Bancarios, judiciales, para venta de activos.</li>
-<li><strong>Cesión de cuotas y venta de acciones:</strong> Con tracto, boletos y control de inhibiciones de socios.</li>
-<li><strong>Disolución y liquidación:</strong> Con balance de liquidación y cancelación IGJ.</li>
+<li><strong>Constitución SA, SAS, SRL:</strong> Estatuto a medida + cláusula de gobierno + acuerdo de socios.</li>
+<li><strong>Actas de directorio y asamblea:</strong> Con quorum y mayorías (art. 59 LGS).</li>
+<li><strong>Reforma y aumento de capital:</strong> Cambio de objeto, sede, administración.</li>
+<li><strong>Poderes generales y especiales:</strong> Bancarios, judiciales, para venta de activos.</li>
+<li><strong>Cesión de cuotas y venta de acciones:</strong> Con tracto y control de inhibiciones.</li>
+<li><strong>Disolución y liquidación:</strong> Balance de liquidación y cancelación IGJ.</li>
 </ul>
-
 <blockquote style="margin:48px 0 0 0;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;opacity:.8">Un estatuto genérico es el juicio más caro que vas a pagar.</blockquote>
 </div>
-
 <div>
 <div class="side">
 <h4 style="font-size:11px;letter-spacing:2px">CONSTITUIR SOCIEDAD</h4>
-<p style="font-size:13px;opacity:.6;margin-top:12px;line-height:1.6">Presupuesto cerrado en el día. Incluye IGJ + AFIP + libros. Sin sorpresas.</p>
-
+<p style="font-size:13px;opacity:.6;margin-top:12px;line-height:1.6">Presupuesto cerrado en el día. Incluye IGJ + AFIP + libros.</p>
 <div style="margin-top:16px;background:var(--bg);border:1px solid var(--border);padding:16px">
-<p style="font-size:10px;letter-spacing:2px;opacity:.5">DESDE</p>
-<p style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:4px">USD 900</p>
-<p style="font-size:11px;opacity:.5">SA / SRL completa · Incluye IGJ</p>
-<p style="font-size:11px;opacity:.5;margin-top:4px">SAS desde USD 600</p>
+<p style="font-size:10px;letter-spacing:2px;opacity:.5">HONORARIOS</p>
+<p style="font-size:12px;margin-top:8px;line-height:1.7">Conforme arancel orientativo Colegio de Escribanos CABA y escala IGJ/AFIP. Presupuesto cerrado según tipo societario (SA, SRL, SAS) en primera reunión. Incluye escritura, inscripción y libros rubricados.</p>
+<p style="font-size:11px;color:var(--gold-d);margin-top:8px">Consulta: colegescribanos.org.ar</p>
 </div>
-
-<a href="../index.html#contacto" class="btn">CONSULTAR HONORARIOS →</a>
-
+<a href="../index.html#contacto" class="btn">SOLICITAR PRESUPUESTO CERRADO →</a>
 <div class="side-dark">
 <h4 style="font-size:10px;letter-spacing:2px;opacity:.5">CHECKLIST</h4>
 <p style="font-size:12px;margin-top:8px;line-height:1.8">
@@ -94,11 +102,6 @@ h1{font-size:60px;line-height:.9}h1 i{font-style:italic;color:var(--gold-d)}
 ✓ Sede social CABA<br>
 ✓ Administración
 </p>
-</div>
-
-<div style="margin-top:20px;display:flex;flex-direction:column;gap:10px">
-<a href="family-office.html" style="font-size:11px;letter-spacing:2px;color:var(--gold-d);text-decoration:none">05 · FAMILY OFFICE →</a>
-<a href="fideicomisos.html" style="font-size:11px;letter-spacing:2px;color:var(--gold-d);text-decoration:none">04 · FIDEICOMISOS →</a>
 </div>
 </div>
 </div>
