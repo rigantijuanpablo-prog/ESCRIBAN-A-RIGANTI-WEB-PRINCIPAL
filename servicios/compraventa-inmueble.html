@@ -2,93 +2,83 @@
 <html lang="es" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Compraventa Inmueble CABA | Estudio de Títulos 30 años | RIGANTI Escribanía</title>
-<meta name="description" content="Escribanía Riganti - Compraventa inmobiliaria en CABA. Estudio de títulos, inhibiciones, deudas, boleto y escritura. Seguridad jurídica desde 1936.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compraventa Inmueble | RIGANTI Escribanía</title>
+<link rel="icon" type="image/png" href="../favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-:root{--bg:#F9F6F1;--dark:#0E1A2B;--gold:#C9B896;--gold-d:#8C7342;--border:#E8E2D9;--muted:rgba(14,26,43,.6)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
-.header{position:fixed;top:0;left:0;right:0;height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 32px;background:rgba(249,246,241,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,26,43,.08);z-index:1000}
-.hero{padding:168px 48px 80px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 380px;gap:80px;align-items:start}
-h1{font-family:'Cormorant Garamond',serif;font-size:62px;line-height:.9;font-weight:300}
-h1 i{font-style:italic;color:var(--gold-d)}
-.badge{border:1px solid var(--gold);color:var(--gold-d);padding:6px 14px;font-size:9px;letter-spacing:3px;display:inline-block;margin-bottom:20px}
-.lead{margin-top:24px;color:var(--muted);font-size:19px;line-height:1.6;max-width:560px}
-h3{font-family:'Cormorant Garamond',serif;font-size:32px;margin-top:56px;font-weight:300}
-.list li{padding:14px 0;border-bottom:1px solid var(--border);font-size:14px;list-style:none;display:flex;gap:12px}
-.list li span.num{font-family:'Cormorant Garamond',serif;color:var(--gold-d);min-width:24px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:24px}
-.step{background:#fff;padding:28px 24px;position:relative;overflow:hidden}
-.step::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.45s}
-.step:hover::before{transform:scaleX(1)}
-.step h4{font-size:11px;letter-spacing:2px;margin-bottom:8px}
-.step p{font-size:13px;opacity:.7;line-height:1.5}
-.btn{background:var(--dark);color:#fff;padding:18px;display:block;text-align:center;text-decoration:none;font-size:11px;letter-spacing:2.5px;margin-top:20px;transition:.3s}
-.btn:hover{background:#1c2e4a}
-.side{background:#fff;border:1px solid var(--border);padding:32px;position:sticky;top:120px}
-.side-dark{background:var(--dark);color:#F9F6F1;padding:28px;margin-top:16px;border:1px solid rgba(255,255,255,.08)}
-#servicio{scroll-margin-top:120px}
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding:140px 24px 48px}h1{font-size:44px}.steps{grid-template-columns:1fr}}
+:root{--bg:#F9F6F1;--dark:#0E1A2B;--gold:#C9B896;--gold-d:#8C7342;--muted:rgba(14,26,43,.6);--border:#E8E2D9}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.7}
+h1,h2{font-family:'Cormorant Garamond',serif;font-weight:300}
+.header-principal{position:fixed;top:0;left:0;right:0;z-index:1000;height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 32px;background:rgba(249,246,241,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,26,43,.08)}
+.logo img{height:72px;width:auto;display:block}
+.nav-principal{display:flex;gap:26px;align-items:center}
+.nav-principal a.nav-link{text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark);opacity:.7}
+.btn-header{border:1px solid rgba(14,26,43,.22);padding:12px 22px;text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark)}
+.nav-principal a.portal-link{color:var(--dark)!important;opacity:.8;display:inline-flex;align-items:center;gap:6px;font-weight:500}
+.barra-flotante-contacto{position:fixed!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;z-index:9999!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;border-radius:28px!important;padding:14px 10px!important;background:rgba(253,250,244,0.72)!important;backdrop-filter:blur(22px) saturate(160%)!important;border:1px solid rgba(201,184,150,0.32)!important;box-shadow:0 24px 64px rgba(14,26,43,0.02),0 4px 16px rgba(14,26,43,0.01),inset 0 1px 0 rgba(255,255,255,0.95)!important}
+.item-flotante{width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--dark)!important;text-decoration:none!important;transition:all .3s!important}
+.item-flotante.item-dorado{background:var(--dark)!important;color:var(--gold)!important;border-radius:50%!important;margin-top:4px!important}
+.hero-serv{padding:160px 48px 60px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.15fr 380px;gap:80px;align-items:start}
+.eyebrow{font-size:10px;letter-spacing:4px;opacity:.5;text-transform:uppercase;display:block;margin-bottom:16px}
+.eyebrow.gold{color:var(--gold-d);opacity:1}
+.hero-serv h1{font-size:56px;line-height:.95;margin-bottom:20px}
+.hero-serv h1 i{font-style:italic;color:var(--gold-d)}
+.lista-check{list-style:none;margin-top:24px}
+.lista-check li{font-size:13px;padding:10px 0;border-bottom:1px solid var(--border);display:flex;gap:10px}
+.lista-check li::before{content:"✓";color:var(--gold-d);font-weight:700}
+.side-dark{background:var(--dark);color:#F9F6F1;padding:28px;border:1px solid rgba(255,255,255,.08)}
+.side-box{background:#fff;border:1px solid var(--border);padding:24px;margin-top:16px}
+.btn-dark{background:var(--dark);color:#fff;padding:16px 28px;text-decoration:none;font-size:11px;letter-spacing:2px;display:inline-block;margin-top:24px}
+#servicios,#contacto{scroll-margin-top:120px}
 </style>
 </head>
 <body>
-<header class="header"><a href="../index.html"><img src="../logo-pluma-riganti-blanco-final.png" style="height:72px" alt="RIGANTI"></a><a href="../index.html" style="text-decoration:none;font-size:11px;letter-spacing:2px;border:1px solid var(--border);padding:12px 22px;color:var(--dark)">← INICIO</a></header>
-
-<div class="hero">
-<div>
-<span class="badge">01 · SERVICIO NOTARIAL · MAT. 1847</span>
-<h1>Compraventa<br><i>Inmobiliaria</i></h1>
-<p class="lead">Seguridad jurídica total. Control exhaustivo de títulos a 30 años, deudas, inhibiciones y situación fiscal. Desde la reserva hasta la inscripción en el Registro de la Propiedad Inmueble.</p>
-<p style="margin-top:20px;max-width:580px">Coordinamos inmobiliaria, banco otorgante y escribanía de contraparte. Vos firmás tranquilo, nosotros custodiamos que el título salga perfecto.</p>
-
-<div class="steps">
-<div class="step"><h4>01 · RESERVA</h4><p>Revisión preliminar de título y deudas. Informe verbal en 24hs.</p></div>
-<div class="step"><h4>02 · BOLETO</h4><p>Redacción con cláusulas de protección. Seña y saldo con trazabilidad.</p></div>
-<div class="step"><h4>03 · ESCRITURA</h4><p>Firma, pago de impuestos, inscripción y entrega de testimonio.</p></div>
+<header class="header-principal">
+<a href="../index.html" class="logo"><img src="../logo-pluma-riganti-blanco-final.png" alt="RIGANTI"></a>
+<nav class="nav-principal">
+<a href="../index.html#servicios" class="nav-link">SERVICIOS</a>
+<a href="../index.html#estudio" class="nav-link">ESTUDIO</a>
+<a href="../index.html#contacto" class="nav-link">CONTACTO</a>
+<a href="../portal.html" class="nav-link portal-link"><i class="fa-solid fa-lock"></i>CLIENTES</a>
+<a href="../index.html#contacto" class="btn-header">SOLICITAR TURNO</a>
+</nav>
+</header>
+<div class="barra-flotante-contacto">
+<a href="https://www.google.com/maps/place/Escriban%C3%ADa+Riganti/" target="_blank" class="item-flotante"><i class="fa-solid fa-location-dot"></i></a>
+<a href="mailto:info@riganti.com.ar" class="item-flotante"><i class="fa-regular fa-envelope"></i></a>
+<a href="tel:+541143220174" class="item-flotante"><i class="fa-solid fa-phone"></i></a>
+<a href="../index.html#contacto" class="item-flotante item-dorado">→</a>
 </div>
-
-<h3>Qué controlamos por vos</h3>
-<ul class="list">
-<li><span class="num">—</span> Estudio de títulos 30 años + tracto sucesivo. Dominio, embargos, hipotecas.</li>
-<li><span class="num">—</span> Inhibiciones de todos los titulares + CUITs.</li>
-<li><span class="num">—</span> Deudas: ABL, AYSA, expensas, infracciones GCBA.</li>
-<li><span class="num">—</span> Situación fiscal: COTI, ITI / Ganancias, Sellos CABA.</li>
-<li><span class="num">—</span> Reglamento de copropiedad, planos, final de obra.</li>
-<li><span class="num">—</span> AFIP, UIF y prevención de lavado (sujeto obligado).</li>
-</ul>
-
-<h3>Requisitos para escriturar</h3>
-<ul class="list">
-<li><span class="num">01</span> DNI de compradores y vendedores + CUIT + estado civil actualizado</li>
-<li><span class="num">02</span> Título de propiedad original + plano de mensura si existe</li>
-<li><span class="num">03</span> Boleto de compraventa + reserva (si hubo)</li>
-<li><span class="num">04</span> Reglamento de copropiedad + últimas expensas + libre deuda</li>
-<li><span class="num">05</span> COTI (AFIP) + Certificado de no retención o ITI según corresponda</li>
-</ul>
-
-<p style="margin-top:48px;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;opacity:.8;max-width:520px">"Una escritura bien hecha perdura por generaciones. Una mal hecha, también."</p>
-</div>
-
+<section class="hero-serv">
 <div>
-<div class="side">
-<h4 style="font-size:11px;letter-spacing:2px">CONSULTA COMPRAVENTA</h4>
-<p style="font-size:13px;opacity:.6;margin-top:12px;line-height:1.6">Informe de dominio e inhibición en 24hs. Presupuesto cerrado sin sorpresas.</p>
-<a href="../index.html#contacto" class="btn">SOLICITAR TURNO →</a>
-<p style="font-size:11px;opacity:.4;margin-top:16px;text-align:center">Respuesta en < 2hs hábiles</p>
-
+<span class="eyebrow gold">01 · COMPRAVENTA</span>
+<h1>Compraventa<br><i>inmobiliaria segura</i></h1>
+<p style="color:var(--muted);max-width:520px;margin-top:16px">Escrituras traslativas, boletos, control exhaustivo de títulos, inhibiciones y deudas. Rigor técnico para que su patrimonio quede blindado por generaciones.</p>
+<ul class="lista-check">
+<li>Estudio de títulos 20 años hacia atrás</li>
+<li>Certificados de dominio, inhibición y deudas (AYSA, ABL, expensas)</li>
+<li>Boleto de compraventa con cláusulas de protección</li>
+<li>Escritura traslativa con inscripción en Registro Propiedad Inmueble CABA</li>
+<li>Atención personal del escribano titular Mat. 1847</li>
+</ul>
+<a href="../index.html#contacto" class="btn-dark">SOLICITAR TURNO →</a>
+</div>
+<div>
 <div class="side-dark">
-<h4 style="font-size:10px;letter-spacing:3px;color:var(--gold)">SIGUIENTE NIVEL</h4>
-<p style="font-size:13px;margin-top:8px;line-height:1.5">¿Comprás como parte de tu patrimonio familiar?</p>
-<a href="family-office.html" style="display:inline-block;margin-top:12px;font-size:11px;letter-spacing:2px;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,184,150,.4)">→ Ver Family Office</a>
+<h4 style="font-size:10px;letter-spacing:2px;opacity:.5">HONORARIOS</h4>
+<p style="font-size:12px;margin-top:8px;line-height:1.7">
+Conforme arancel orientativo del Colegio de Escribanos CABA. Presupuesto detallado y cerrado en la primera consulta. Incluye estudio de títulos, certificados e inscripción. Sin costos ocultos.
+</p>
+<p style="font-size:11px;color:var(--gold);margin-top:12px">Consulta arancel: colegescribanos.org.ar</p>
 </div>
-
-<a href="sociedades.html" style="display:block;margin-top:24px;font-size:11px;letter-spacing:2px;color:var(--gold-d);text-decoration:none">02 · SOCIEDADES →</a>
-<a href="fideicomisos.html" style="display:block;margin-top:12px;font-size:11px;letter-spacing:2px;color:var(--gold-d);text-decoration:none">04 · FIDEICOMISOS →</a>
+<div class="side-box">
+<p style="font-size:10px;letter-spacing:2px;opacity:.5">SEDE</p>
+<p style="font-size:13px;margin-top:6px">Maipú 497, 4° Piso<br>CABA · Microcentro<br>Atención privada</p>
 </div>
 </div>
-</div>
+</section>
 </body>
 </html>
