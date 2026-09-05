@@ -1,125 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mi Escritorio | RIGANTI</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FAF9F6;--text:#0E1A2B;--gold:#8C7342;--line:rgba(14,26,43,.12);--card:#fff}
+:root{--bg:#FAF9F6;--text:#0E1A2B;--gold:#8C7342;--line:rgba(14,26,43,.12)}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex;min-height:100vh}
-.side{flex:0 0 37%;height:100vh;position:sticky;top:0;background:#F9F6F0}
-.side img{width:100%;height:100%;object-fit:cover;display:block}
-.main{flex:0 0 63%;padding:28px 36px;overflow-y:auto}
-.top{font-size:10px;letter-spacing:2px;opacity:.5;display:flex;justify-content:space-between}
-h1{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;margin-top:10px}
-h1 i{font-style:italic;color:var(--gold)}
-.sub{font-size:11px;opacity:.5;margin-top:6px}
-.grid-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0}
-.kpi{background:var(--card);border:1px solid var(--line);padding:16px}
-.kpi span{font-size:9px;letter-spacing:1.5px;opacity:.5;display:block}
-.kpi b{font-size:14px;margin-top:6px;display:block}
-.tabs{display:flex;gap:18px;border-bottom:1px solid var(--line);margin:24px 0 18px}
-.tab{font-size:10px;letter-spacing:1.5px;padding-bottom:10px;cursor:pointer;border-bottom:2px solid transparent}
-.tab.active{border-color:var(--text);font-weight:600}
-.tramite{background:var(--card);border:1px solid var(--line);padding:20px;margin-bottom:14px}
-.tramite-head{display:flex;justify-content:space-between;align-items:center}
-.badge{font-size:9px;letter-spacing:1px;padding:6px 10px;background:#0E1A2B;color:#fff}
-.badge.en{background:#FFF3CD;color:#8A6D00}.badge.listo{background:#D4E8E0;color:#1A5C3A}
-.meta{font-size:11px;opacity:.5;margin-top:8px;line-height:1.6}
-.btns{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
-.btn{font-size:10px;letter-spacing:1px;padding:9px 12px;border:1px solid var(--line);background:#fff;cursor:pointer;text-decoration:none;color:var(--text)}
-.btn.dark{background:var(--text);color:#fff;border-color:var(--text)}
-@media(max-width:900px){.side{display:none}.main{flex:1}.grid-top{grid-template-columns:1fr}}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);display:flex}
+.side{flex:0 0 28%;height:100vh;position:sticky;top:0}.side img{width:100%;height:100%;object-fit:cover}
+.main{flex:1;padding:40px 50px}
+h1{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300} h1 i{font-style:italic;color:var(--gold);font-weight:300}
+.top{font-size:10px;letter-spacing:2px;display:flex;justify-content:space-between;align-items:center}
+.btn{border:1px solid var(--line);padding:10px 18px;font-size:10px;letter-spacing:2px;background:#fff;cursor:pointer;text-decoration:none;color:var(--text)}
+.card{background:#fff;border:1px solid var(--line);padding:22px;margin-top:16px;display:flex;justify-content:space-between}
+.badge{background:#0E1A2B;color:#fff;font-size:9px;padding:6px 10px;letter-spacing:1px}
 </style>
 </head>
 <body>
 <div class="side"><img src="hall-portal-riganti-final2.jpg"></div>
 <div class="main">
-<div class="top"><span id="dniLabel">DNI: --</span><a href="portal.html" style="color:inherit;text-decoration:none;border:1px solid var(--line);padding:6px 10px">SALIR</a></div>
-<h1>Hola, <i id="nombreLabel">—</i></h1>
-<div class="sub" id="subLabel">Escribanía Riganti · Tu escritorio privado 24/7</div>
-
-<div class="grid-top">
-<div class="kpi"><span>TRÁMITES ACTIVOS</span><b id="kpiCount">0</b></div>
-<div class="kpi"><span>TURNO CONFIRMADO</span><b id="kpiTurno">Sin confirmar</b></div>
-<div class="kpi"><span>BÓVEDA DIGITAL</span><b id="kpiBoveda">Ver copias</b></div>
-</div>
-
-<div class="tabs">
-<div class="tab active">MIS TRÁMITES</div>
-<a class="tab" style="text-decoration:none;color:inherit" href="tramite.html">REQUISITOS</a>
-<a class="tab" style="text-decoration:none;color:inherit" href="boveda.html">TURNOS Y PRESUPUESTO</a>
-<a class="tab" style="text-decoration:none;color:inherit" href="mensajes.html">MENSAJES</a>
-</div>
-
-<div id="lista"></div>
-<div id="empty" style="display:none;font-size:12px;opacity:.5;margin-top:20px">No se encontraron trámites para este DNI. Contactá a la escribanía.</div>
-
+<div class="top"><span>EXPEDIENTES ACTIVOS</span><a class="btn" href="portal.html">SALIR →</a></div>
+<h1 id="h1">Hola, <i>Juan Pablo Riganti</i></h1>
+<div id="lista" style="margin-top:30px"></div>
+<div style="margin-top:30px;background:#fff;border:1px solid var(--line);padding:16px;font-size:12px;opacity:.6">🔒 Documentación con validez legal. Consultas: info@riganti.com.ar</div>
 </div>
 <script>
-// 1. Tomar DNI de sesión (lo guarda portal.html)
-let dniSesion = localStorage.getItem('riganti_sesion') || '28079791';
-document.getElementById('dniLabel').innerText='DNI: '+dniSesion;
-
-// 2. Leer turno si existe
-let turno = localStorage.getItem('riganti_turno');
-if(turno){ document.getElementById('kpiTurno').innerText=turno; }
-
-// 3. Cargar clientes.json
-fetch('clientes.json?v='+Date.now())
-.then(r=>r.json())
-.then(data=>{
-  // Soporta 2 formatos: viejo (array plano) y nuevo (con tramites array)
-  let cliente = null;
-  let tramites = [];
-
-  // Formato nuevo
-  let found = data.find(c=>c.dni==dniSesion);
-  if(found){
-    cliente = found;
-    if(found.tramites && found.tramites.length>0){
-      tramites = found.tramites;
-    }else{
-      // si es formato nuevo pero sin tramites, usar el objeto como tramite
-      tramites = [found];
-    }
-  } else {
-    // Formato viejo (todos objetos con dni repetido) -> filtrar
-    let filtrados = data.filter(c=>c.dni==dniSesion);
-    if(filtrados.length>0){
-      cliente = filtrados[0];
-      tramites = filtrados.map(f=>({tipo:f.tramite||f.tipo||'Trámite',estado:f.estado,notas:f.notas,fecha:f.fecha,pdf:f.pdf}));
-    }
-  }
-
-  if(!cliente){ document.getElementById('empty').style.display='block'; return; }
-  document.getElementById('nombreLabel').innerText=cliente.nombre||'Cliente';
-  document.getElementById('kpiCount').innerText=tramites.length;
-
-  document.getElementById('lista').innerHTML = tramites.map(t=>{
-    let est = (t.estado||'').toLowerCase();
-    let cls = est.includes('titulo')||est.includes('estudio')? 'en' : est.includes('listo')||est.includes('firma')? 'listo' : '';
-    return `<div class=tramite>
-      <div class=tramite-head><div style="font-weight:500;font-size:14px"><i class="fa-regular fa-file" style="margin-right:8px;opacity:.4"></i>${t.tipo||t.tramite||'Escritura'}</div><span class="badge ${cls}">${(t.estado||'EN CURSO').toUpperCase()}</span></div>
-      <div class=meta>
-        <div>Fecha: ${t.fecha||'—'}</div>
-        <div>Notas: ${t.notas||'—'}</div>
-        ${t.tipo=='Family Office' || (t.notas&&t.notas.includes('Maipú'))? '<div>Dirección: Av. Alvear 1890 - Mat. 15-4321</div>' : ''}
-      </div>
-      <div class=btns>
-        <a class="btn dark" href="tramite.html?dni=${dniSesion}">VER REQUISITOS</a>
-        <a class="btn" href="boveda.html?dni=${dniSesion}">VER PRESUPUESTO / TURNO</a>
-        ${t.pdf?`<a class="btn" href="${t.pdf}" target="_blank"><i class="fa-solid fa-file-pdf"></i> DESCARGAR PDF</a>`:''}
-      </div>
-    </div>`;
-  }).join('');
-})
-.catch(e=>{
-  document.getElementById('lista').innerHTML='<div style=color:red;font-size:12px>Error leyendo clientes.json: '+e+'</div>';
-});
+let dni = localStorage.getItem('riganti_sesion')||'28079791';
+fetch('clientes.json?v='+Date.now()).then(r=>r.json()).then(data=>{
+ let cli = data.find(c=>c.dni==dni);
+ if(!cli){ // formato viejo con repetidos
+   let arr = data.filter(c=>c.dni==dni);
+   cli = {nombre:arr[0]?.nombre||'Juan Pablo Riganti', tramites: arr.map(a=>({tipo:a.tramite||a.tipo, estado:a.estado, notas:a.notas, fecha:a.fecha}))};
+ }
+ document.getElementById('h1').innerHTML=`Hola, <i>${cli.nombre}</i>`;
+ let tramites = cli.tramites||[];
+ if(tramites.length==0 && cli.tramite) tramites=[cli]; // fallback
+ document.getElementById('lista').innerHTML = tramites.map(t=>`
+   <div class=card>
+     <div><div style="font-weight:500">${t.tipo||t.tramite}</div><div style="font-size:11px;opacity:.6;margin-top:6px">${t.notas||''}<br>${t.fecha||''}</div>
+     <div style="margin-top:12px;display:flex;gap:8px"><a class=btn href="tramite.html">REQUISITOS</a><a class=btn href="boveda.html">PRESUPUESTO / TURNO</a><a class=btn href="mensajes.html">MENSAJES</a></div>
+     </div><div><span class=badge>${(t.estado||'EN CURSO').toUpperCase()}</span></div>
+   </div>`).join('') || '<div style=opacity:.5>No hay trámites cargados para '+dni+'</div>';
+}).catch(e=>{document.getElementById('lista').innerHTML='Error clientes.json: '+e});
 </script>
 </body>
 </html>
