@@ -3,16 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Sucesiones y Donaciones CABA | Donación con Usufructo y Testamentos | RIGANTI</title>
-<meta name="description" content="Planificación sucesoria en CABA. Donación con reserva de usufructo vitalicio, testamentos, bien de familia y cesión de derechos. Evitá juicios. RIGANTI 90 años.">
+<title>Sucesiones y Donaciones CABA | RIGANTI</title>
 <link rel="icon" type="image/png" href="../favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root{--bg:#F9F6F1;--dark:#0E1A2B;--gold:#C9B896;--gold-d:#8C7342;--muted:rgba(14,26,43,.6);--border:#E8E2D9}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--dark);line-height:1.8}
 h1,h3{font-family:'Cormorant Garamond',serif;font-weight:300}
 .header{position:fixed;top:0;left:0;right:0;height:88px;display:flex;justify-content:space-between;align-items:center;padding:0 32px;background:rgba(249,246,241,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,26,43,.08);z-index:1000}
+.nav-principal{display:flex;gap:26px;align-items:center}
+.nav-principal a{font-size:11px;letter-spacing:2px;text-decoration:none;color:var(--dark);opacity:.7}
+.nav-principal a.portal-link{opacity:.8;display:inline-flex;align-items:center;gap:6px;font-weight:500}
 .hero{padding:168px 48px 80px;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.2fr 380px;gap:80px;align-items:start}
 h1{font-size:60px;line-height:.9}h1 i{font-style:italic;color:var(--gold-d)}
 .badge{border:1px solid var(--gold);color:var(--gold-d);padding:6px 14px;font-size:9px;letter-spacing:3px;display:inline-block;margin-bottom:20px}
@@ -22,81 +25,75 @@ h1{font-size:60px;line-height:.9}h1 i{font-style:italic;color:var(--gold-d)}
 .comp-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.45s}
 .comp-card:hover::before{transform:scaleX(1)}
 .comp-card.featured{background:var(--dark);color:#F9F6F1}
-.comp-card.featured::before{background:var(--gold)}
 .list li{padding:16px 0;border-bottom:1px solid var(--border);font-size:14px;list-style:none;position:relative;overflow:hidden}
 .list li::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.45s}
 .list li:hover::before{transform:scaleX(1)}
 .side{background:#fff;border:1px solid var(--border);padding:32px;position:sticky;top:120px}
 .btn{background:var(--dark);color:#fff;padding:18px;display:block;text-align:center;text-decoration:none;font-size:11px;letter-spacing:2.5px;margin-top:20px;transition:.3s}
-.btn:hover{background:#1c2e4a}
 .side-dark{background:var(--dark);color:#F9F6F1;padding:24px;margin-top:16px}
+.barra-flotante-contacto{position:fixed!important;right:18px!important;top:50%!important;transform:translateY(-50%)!important;z-index:9999!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:14px!important;border-radius:28px!important;padding:14px 10px!important;background:rgba(253,250,244,0.72)!important;backdrop-filter:blur(22px) saturate(160%)!important;border:1px solid rgba(201,184,150,0.32)!important;box-shadow:0 24px 64px rgba(14,26,43,0.02)!important}
+.item-flotante{width:44px!important;height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;color:var(--dark)!important;text-decoration:none!important}
+.item-flotante.item-dorado{background:var(--dark)!important;color:var(--gold)!important;border-radius:50%!important;margin-top:4px!important}
 @media(max-width:900px){.hero{grid-template-columns:1fr;padding:140px 24px 48px}.comparison{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header class="header"><a href="../index.html"><img src="../logo-pluma-riganti-blanco-final.png" style="height:72px" alt="RIGANTI"></a><a href="../index.html" style="text-decoration:none;font-size:11px;letter-spacing:2px;border:1px solid var(--border);padding:12px 22px;color:var(--dark)">← INICIO</a></header>
-
+<header class="header">
+<a href="../index.html"><img src="../logo-pluma-riganti-blanco-final.png" style="height:72px" alt="RIGANTI"></a>
+<nav class="nav-principal">
+<a href="../index.html#servicios">SERVICIOS</a>
+<a href="../portal.html" class="portal-link"><i class="fa-solid fa-lock"></i>CLIENTES</a>
+<a href="../index.html" style="border:1px solid var(--border);padding:12px 22px">← INICIO</a>
+</nav>
+</header>
+<div class="barra-flotante-contacto">
+<a href="https://www.google.com/maps/place/Escriban%C3%ADa+Riganti/" target="_blank" class="item-flotante"><i class="fa-solid fa-location-dot"></i></a>
+<a href="mailto:info@riganti.com.ar" class="item-flotante"><i class="fa-regular fa-envelope"></i></a>
+<a href="tel:+541143220174" class="item-flotante"><i class="fa-solid fa-phone"></i></a>
+<a href="../index.html#contacto" class="item-flotante item-dorado">→</a>
+</div>
 <div class="hero">
 <div>
 <span class="badge">03 · FAMILIA · PLANIFICACIÓN EN VIDA</span>
 <h1>Sucesiones y<br><i>Donaciones</i></h1>
-<p class="lead">Planificación en vida para evitar que tus hijos terminen en un juzgado 10 años. Donación con reserva de usufructo vitalicio, testamentos y protección de vivienda. La sucesión más barata es la que nunca se hace.</p>
-
+<p class="lead">Planificación en vida para evitar juicios sucesorios. Donación con reserva de usufructo vitalicio, testamentos y protección de vivienda.</p>
 <div class="comparison">
 <div class="comp-card featured">
 <h4 style="font-size:11px;letter-spacing:2px;color:var(--gold)">RECOMENDADO · EN VIDA</h4>
 <p style="font-size:20px;font-family:'Cormorant Garamond',serif;margin-top:8px">Donación con usufructo vitalicio</p>
-<p style="font-size:12px;opacity:.6;margin-top:8px;line-height:1.6">Donás hoy la nuda propiedad, vos seguís viviendo y cobrando alquiler hasta tu último día. Tus hijos ya son dueños, no hay sucesión. Art. 2380 CCCN.</p>
-<p style="font-size:11px;color:var(--gold);margin-top:12px">✓ Evita sucesión · ✓ Protege vivienda · ✓ Inmediato</p>
+<p style="font-size:12px;opacity:.6;margin-top:8px;line-height:1.6">Donás hoy la nuda propiedad, seguís viviendo y cobrando alquiler hasta tu último día. Tus hijos ya son dueños. Art. 2380 CCCN.</p>
+<p style="font-size:11px;color:var(--gold);margin-top:12px">✓ Evita sucesión · ✓ Protege vivienda</p>
 </div>
 <div class="comp-card">
 <h4 style="font-size:11px;letter-spacing:2px">ALTERNATIVA · PARA DESPUÉS</h4>
 <p style="font-size:20px;font-family:'Cormorant Garamond',serif;margin-top:8px">Testamento + Sucesión</p>
-<p style="font-size:12px;opacity:.6;margin-top:8px;line-height:1.6">Dejás tu voluntad escrita. Igual hay que hacer sucesión, pero más corta y sin pelearse por legítima. Ológrafo o por acto público.</p>
-<p style="font-size:11px;opacity:.5;margin-top:12px">· Juicio de 8-18 meses · Costo 4% del patrimonio</p>
+<p style="font-size:12px;opacity:.6;margin-top:8px;line-height:1.6">Voluntad escrita. Más segura por acto público. Con mejora de legítima y designación de tutor.</p>
 </div>
 </div>
-
 <h3 style="font-size:32px;margin-top:56px">Servicios</h3>
 <ul class="list" style="margin-top:24px">
-<li><strong>Donación con reserva de usufructo vitalicio:</strong> La herramienta más usada en CABA. Donás, te reservás uso y goce, y evitás sucesión futura. Con pacto de reversión si fallece donatario.</li>
-<li><strong>Testamento ológrafo y por acto público:</strong> Por acto público ante nosotros (más seguro) u ológrafo (de puño y letra). Con mejora de legítima y designación de tutor.</li>
-<li><strong>Afectación a vivienda (bien de familia):</strong> Protección contra embargos. Inembargable hasta 100% si es única vivienda. Trámite en el día.</li>
-<li><strong>Cesión de derechos hereditarios:</strong> Cuando un heredero quiere vender su parte antes de terminar la sucesión. Con tracto y publicidad.</li>
-<li><strong>Autorizaciones para menores e incapaces:</strong> Venta de bienes de menores con venia judicial + intervención notarial.</li>
-<li><strong>Poderes de autoprotección y directivas anticipadas:</strong> Para incapacidad futura. Quién decide por tu salud y patrimonio.</li>
+<li><strong>Donación con reserva de usufructo vitalicio:</strong> Donás, te reservás uso y goce, evitás sucesión futura. Con pacto de reversión.</li>
+<li><strong>Testamento por acto público:</strong> Más seguro que ológrafo. Con mejora de legítima.</li>
+<li><strong>Afectación a vivienda (bien de familia):</strong> Protección contra embargos. Trámite en el día.</li>
+<li><strong>Cesión de derechos hereditarios:</strong> Venta de parte antes de terminar sucesión.</li>
+<li><strong>Poderes de autoprotección:</strong> Para incapacidad futura.</li>
 </ul>
-
-<blockquote style="margin:48px 0 0 0;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;opacity:.8">El 70% de las sucesiones en CABA terminan en conflicto por no haber donado en vida con usufructo.</blockquote>
-
-<div style="margin-top:48px;background:#fff;border:1px solid var(--border);padding:24px">
-<h4 style="font-size:11px;letter-spacing:2px">CASO REAL · AHORRO</h4>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;font-size:13px">
-<div><p style="opacity:.5">SUCESIÓN JUDICIAL</p><p style="font-size:20px;margin-top:4px">18 meses + 4% + $ 2MM gastos</p></div>
-<div><p style="opacity:.5;color:var(--gold-d)">DONACIÓN CON USUFRUCTO</p><p style="font-size:20px;margin-top:4px;color:var(--gold-d)">15 días + 1.5% + $ 0 juicio</p></div>
+<blockquote style="margin:48px 0 0 0;padding-left:28px;border-left:2px solid var(--gold);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;opacity:.8">El 70% de las sucesiones en CABA terminan en conflicto por no haber donado en vida.</blockquote>
 </div>
-</div>
-</div>
-
 <div>
 <div class="side">
 <h4 style="font-size:11px;letter-spacing:2px">PLANIFICAR SUCESIÓN</h4>
-<p style="font-size:13px;opacity:.6;margin-top:12px;line-height:1.6">Primera consulta sin cargo con el escribano titular. Te decimos qué te conviene: donación o testamento.</p>
-
+<p style="font-size:13px;opacity:.6;margin-top:12px;line-height:1.6">Primera consulta con el escribano titular. Te decimos qué te conviene.</p>
 <div style="margin-top:16px;background:var(--bg);border:1px solid var(--border);padding:16px">
-<p style="font-size:10px;letter-spacing:2px;opacity:.5">DESDE</p>
-<p style="font-family:'Cormorant Garamond',serif;font-size:28px;margin-top:4px">USD 800</p>
-<p style="font-size:11px;opacity:.5">Donación con usufructo · 1 inmueble</p>
-<p style="font-size:11px;opacity:.5;margin-top:4px">Testamento desde USD 400</p>
+<p style="font-size:10px;letter-spacing:2px;opacity:.5">HONORARIOS</p>
+<p style="font-size:12px;margin-top:8px;line-height:1.7">Conforme arancel orientativo Colegio de Escribanos CABA. Donación con usufructo y testamentos con presupuesto cerrado según cantidad de inmuebles y herederos. Primera consulta orientativa sin cargo.</p>
+<p style="font-size:11px;color:var(--gold-d);margin-top:8px">Consulta: colegescribanos.org.ar</p>
 </div>
-
-<a href="../index.html#contacto" class="btn">AGENDAR CONSULTA SIN CARGO →</a>
+<a href="../index.html#contacto" class="btn">AGENDAR CONSULTA →</a>
 <a href="family-office.html" style="display:block;margin-top:16px;border:1px solid var(--border);padding:14px;text-align:center;text-decoration:none;font-size:11px;letter-spacing:2px;color:var(--dark)">→ VER FAMILY OFFICE</a>
-
 <div class="side-dark">
 <h4 style="font-size:10px;letter-spacing:2px;opacity:.5">¿POR QUÉ RIGANTI?</h4>
-<p style="font-size:12px;margin-top:8px;line-height:1.6">90 años haciendo sucesiones en CABA. Sabemos qué juzgado demora y qué juez pide qué. Te evitamos el juicio, no te lo vendemos.</p>
-<p style="font-size:11px;color:var(--gold);margin-top:12px">Mat. 1847 · Colegio de Escribanos CABA</p>
+<p style="font-size:12px;margin-top:8px;line-height:1.6">90 años haciendo planificación familiar en CABA. Te evitamos el juicio, no te lo vendemos.</p>
 </div>
 </div>
 </div>
